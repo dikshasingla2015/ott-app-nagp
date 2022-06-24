@@ -1,0 +1,24 @@
+{
+    "HEADER": {
+        "TITLE": "OTP App NAGP",
+        "SELECT": "Change language",
+        "SELECT_ENGLISH": "English",
+        "SELECT_GERMAN": "German",
+        "HOME": "Home",
+        "LOGIN": "Login",
+        "LOGOUT": "Logout",
+        "SEARCH": "Search",
+        "SEARCH_TEXT": "Search movie by name",
+        "CATEGORY_TEXT": "Select Category"
+    },
+    "LOGIN": {
+        "USERNAME": "User Name",
+        "PASSWORD": "Password",
+        "USERNAME_REQUIRED": "Please enter user name",
+        "USERNAME_EMAIL": "username must be of email type",
+        "PASSWORD_REQUIRED": "Please enter password",
+        "LOGIN_TEXT": "LOGIN",
+        "SIGNIN": "Sign In",
+        "INVALID_CREDS": "Invalid Login Credentials"
+    }
+}

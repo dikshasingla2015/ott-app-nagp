@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { MovieDetailPageComponent } from './components/movie-detail-page/movie-detail-page.component';
-import { MovieDataResolver } from './resolver/movie-data/movie-data.resolver';
-import { MovieListResolver } from './resolver/movie-list/movie-list.resolver';
+import { MovieDataResolver } from './resolvers/movie-data/movie-data.resolver';
+import { MovieListResolver } from './resolvers/movie-list/movie-list.resolver';
 
 const routes: Routes = [
   {
@@ -25,7 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('../../auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'add',
+    loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule)
   },
   {
     path: '',
@@ -38,4 +42,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class FeaturesRoutingModule { }
+export class HomeRoutingModule { }

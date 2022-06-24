@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchMovieComponent } from './components/search-movie/search-movie.component';
 import { ShowCategoryTreeComponent } from './components/show-category-tree/show-category-tree.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export class EnsureModuleLoadedOnceGuard {
   constructor(targetModule: any) {
@@ -27,6 +28,9 @@ const components = [
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    AuthGuard
   ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
