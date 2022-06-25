@@ -1,1 +1,62 @@
-<p>login-page works!</p>
+<div class="container">
+    <div class="card" [style]="{'width': '28rem', 'margin-bottom': '2em'}">
+        <div class="card-header text-center">{{ 'LOGIN.LOGIN_TEXT' | translate }}</div>
+        <div>
+            <img src="assets/images/welcome2.jpg" width="100%">
+        </div>
+        <div class="card-body">
+            <div class="alert alert-danger" *ngIf="message">
+                {{ message }}</div>
+            <form class="needs-validation" nonvalidate [formGroup]="loginForm">
+                <div class="form-group">
+                    <label for="user-name">{{ 'LOGIN.USERNAME' | translate }}</label>
+                    <input type="email" class="form-control" id="user-name" formControlName="username"
+                        [ngClass]="getControlValidationClasses(userNameControl)">
+                    <div class="invalid-feedback"
+                        *ngIf="userNameControl.touched && userNameControl.errors?.['required']">
+                        {{ 'LOGIN.USERNAME_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="userNameControl.touched && userNameControl.errors?.['email']">
+                        {{ 'LOGIN.USERNAME_EMAIL' | translate }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password-control">{{ 'LOGIN.PASSWORD' | translate }}</label>
+                    <input type="password" class="form-control" id="password-control" formControlName="password"
+                        [ngClass]="getControlValidationClasses(passwordControl)">
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['required']">
+                        {{ 'LOGIN.PASSWORD_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['minlength']">
+                        {{ 'LOGIN.PASSWORD_MIN_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['maxlength']">
+                        {{ 'LOGIN.PASSWORD_MAX_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="passwordControl.touched && passwordControl.errors?.['pattern']">
+                        {{ 'LOGIN.INCORRECT_FORMAT' | translate }}
+                    </div>
+                </div>
+                <div style="text-align: center; padding: 3px;">
+                    <button pButton pRipple type="button" class="p-button-rounded p-button-success"
+                        [disabled]="!loginForm.valid" (click)="onLoginFormSubmit()">
+                        {{ 'LOGIN.SIGNIN' | translate }}</button>
+                </div>
+            </form>
+            <div style="text-align: center;padding: 3px;">
+                <p>
+                    {{ 'LOGIN.SIGN_UP_TEXT' | translate }}
+                </p>
+            </div>
+
+            <div style="text-align: center;padding: 3px;">
+                <button type="button" class="btn btn-success" routerLink="/signup">{{ 'LOGIN.SIGN_UP' | translate
+                    }}</button>
+            </div>
+        </div>
+    </div>
+</div>

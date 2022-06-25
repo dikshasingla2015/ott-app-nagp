@@ -5,13 +5,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchMovieComponent } from './components/search-movie/search-movie.component';
 import { ShowCategoryTreeComponent } from './components/show-category-tree/show-category-tree.component';
 import { AuthGuard } from './guards/auth.guard';
+import { TranslateModule } from '@ngx-translate/core';
 
 export class EnsureModuleLoadedOnceGuard {
   constructor(targetModule: any) {
-     if (targetModule) {
+    if (targetModule) {
       console.error("Module already imported");
-       throw new Error(`${targetModule.constructor.name} has already been loaded. Import this module in the AppModule only.`);
-     }
+      throw new Error(`${targetModule.constructor.name} has already been loaded. Import this module in the AppModule only.`);
+    }
   }
 }
 
@@ -27,10 +28,13 @@ const components = [
     components
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
-  exports:[
-    AuthGuard
+  exports: [
+    AuthGuard,
+    HeaderComponent,
+    FooterComponent,
   ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {

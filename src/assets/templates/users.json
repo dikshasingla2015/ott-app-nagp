@@ -1,0 +1,29 @@
+[
+    {
+        "userId": "1",
+        "userName": "abc123@nagarro.com",
+        "phoneNumber": "9834125612",
+        "password": "abc123",
+        "role": "admin",
+        "userStatus": "active",
+        "isPrimeMember": true
+    },
+    {
+        "userId": "2",
+        "userName": "xyz567@nagarro.com",
+        "phoneNumber": "7856983456",
+        "password": "xyz567",
+        "role": "user",
+        "userStatus": "active",
+        "isPrimeMember": true
+    },
+    {
+        "userId": "3",
+        "userName": "pqr876@nagarro.com",
+        "phoneNumber": "9856743567",
+        "password": "pqr876",
+        "role": "user",
+        "userStatus": "active",
+        "isPrimeMember": false
+    }
+]

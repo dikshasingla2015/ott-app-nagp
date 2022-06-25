@@ -5,15 +5,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { MovieDetailPageComponent } from './components/movie-detail-page/movie-detail-page.component';
-import { ReviewComponent } from './components/review/review.component';
-import { TakePrimeMembershipComponent } from './components/take-prime-membership/take-prime-membership.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 const components = [
   HomePageComponent,
   MainPageComponent,
   MovieDetailPageComponent,
-  ReviewComponent,
-  TakePrimeMembershipComponent
+  ReviewsComponent
 ];
 
 @NgModule({
@@ -22,7 +21,8 @@ const components = [
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    TranslateModule
   ]
 })
 export class HomeModule { }
