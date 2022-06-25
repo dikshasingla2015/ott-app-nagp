@@ -7,6 +7,7 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const components = [
   LoginPageComponent,
@@ -21,7 +22,8 @@ const components = [
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    MatSnackBarModule
   ]
 })
 export class AuthModule { }

@@ -13,10 +13,12 @@ export class UserService {
 
   userSubject = new BehaviorSubject<User[]>([]);
 
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient) {
+    this.getAllUsers();
+  }
 
   public getAllUsers(): Observable<User[]> {
-    const url = `${this.USER_SERVICE_BASE_URL}/user.json`;
+    const url = `${this.USER_SERVICE_BASE_URL}/users.json`;
     this.http.get<User[]>(url).subscribe(users => {
       this.userSubject.next(users as User[]);
     });
@@ -30,15 +32,18 @@ export class UserService {
   }
 
   public addUserData(user: User): Observable<string> {
-
     const userData = this.userSubject.getValue();
-    const existingUser = userData.find(data => data.userName === user.userName);
-    if (existingUser != undefined) {
-      userData.push(user);
-      this.userSubject.next(userData);
-      return of('User Created Successfully.');
+    if (this.checkIfUserAlreadyExists(userData, user.userName)) {
+      return of('User Already Exists.');
     }
-    return of('User Already Exists.');
+    user.userId = (userData.length + 1).toString();
+    userData.push(user);
+    this.userSubject.next(userData);
+    return of('User Created Successfully.');
+  }
+
+  public checkIfUserAlreadyExists(userData: User[], userName: string): Boolean {
+    return userData.find(data => data.userName === userName) !== undefined ? true : false;
   }
 
 }

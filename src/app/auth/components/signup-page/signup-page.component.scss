@@ -1,11 +1,23 @@
 .container {
     margin-top: 30px;
 }
+
 .card-header {
     font-size: 22px;
     font-weight: bold;
 }
+
 label {
     font-weight: bold;
     font-family: sans-serif;
+}
+
+::ng-deep .danger-style {
+    background-color: brown;
+    color: white;
+}
+
+::ng-deep .success-style {
+    background-color: seagreen;
+    color: white;
 }

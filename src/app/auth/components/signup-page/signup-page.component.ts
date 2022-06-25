@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/user.model';
-import { AuthService } from 'src/app/core/services/Auth/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 import Validation from '../../utils/validation';
+import { UserService } from 'src/app/core/services/user/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup-page',
@@ -21,10 +22,11 @@ export class SignupPageComponent implements OnInit {
   passwordControl!: FormControl;
   confirmPasswordControl!: FormControl;
 
-  constructor(private authService: AuthService,
+  constructor(private userService: UserService,
     private router: Router,
     private readonly translateService: TranslateService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar) {
 
   }
 
@@ -60,10 +62,30 @@ export class SignupPageComponent implements OnInit {
   }
 
   onFormSubmit() {
+    delete this.signUpForm.value.confirmPassword;
     const newUser = this.signUpForm.value as User;
     newUser.role = 'user';
     newUser.isPrimeMember = false;
-    console.log('new user ', newUser);
+    this.userService.addUserData(newUser).subscribe(
+      data => {
+        if (data === 'User Already Exists.') {
+          this.openSnackBar(data, '', "danger-style");
+          this.signUpForm.reset();
+        } else {
+          this.openSnackBar(data, '', "success-style");
+          this.router.navigateByUrl('/auth/login');
+        }
+      }
+    );
+  }
+
+  openSnackBar(message: string, action: string, style:string): void {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+      panelClass: [style],
+      verticalPosition: "top", // Allowed values are  'top' | 'bottom'
+      horizontalPosition: "right" // Allowed values are 'start' | 'center' | 'end' | 'left' | 'right'
+    });
   }
 
   getControlValidationClasses(control: FormControl) {
