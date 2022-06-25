@@ -3,8 +3,8 @@
         <div class="card-header text-center">{{ 'SIGNUP.SIGNUP_TEXT' | translate }}</div>
         <div class="card-body">
             <form class="needs-validation" nonvalidate [formGroup]="signUpForm" (ngSubmit)="onFormSubmit()">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
                         <label for="firstName">{{ 'SIGNUP.FIRST_NAME' | translate }}</label>
                         <input type="text" class="form-control" id="firstName" formControlName="firstName"
                             [ngClass]="getControlValidationClasses(firstNameControl)">
@@ -21,7 +21,7 @@
                             {{ 'SIGNUP.NAME_FORMAT' | translate }}
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="col-md-6">
                         <label for="lastname">{{ 'SIGNUP.LAST_NAME' | translate }}</label>
                         <input type="text" class="form-control" id="lastname" formControlName="lastName"
                             [ngClass]="getControlValidationClasses(lastNameControl)">
@@ -39,8 +39,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
                         <label for="userName">{{ 'SIGNUP.EMAIL' | translate }}</label>
                         <input type="userName" class="form-control" id="userName" formControlName="userName"
                             [ngClass]="getControlValidationClasses(emailControl)">
@@ -51,9 +52,9 @@
                             {{ 'SIGNUP.EMAIL_FORMAT' | translate }}
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="col-md-6">
                         <label for="phoneNumber">{{ 'SIGNUP.PHONE_NUMBER' | translate }}</label>
-                        <input type="number" class="form-control" id="phoneNumber" formControlName="phoneNumber"
+                        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber"
                             [ngClass]="getControlValidationClasses(phoneNumberControl)">
                         <div class="invalid-feedback"
                             *ngIf="phoneNumberControl.touched && phoneNumberControl.errors?.['required']">
@@ -64,13 +65,18 @@
                             {{ 'SIGNUP.PHONE_NUMBER_MAX_LENGTH' | translate }}
                         </div>
                         <div class="invalid-feedback"
+                            *ngIf="phoneNumberControl.touched && phoneNumberControl.errors?.['minlength']">
+                            {{ 'SIGNUP.PHONE_NUMBER_MAX_LENGTH' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
                             *ngIf="phoneNumberControl.touched && phoneNumberControl.errors?.['pattern']">
                             {{ 'SIGNUP.PHONE_NUMBER_FORMAT' | translate }}
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
                         <label for="password">{{ 'SIGNUP.PASSWORD' | translate }}</label>
                         <input type="password" class="form-control" id="password" formControlName="password"
                             [ngClass]="getControlValidationClasses(passwordControl)">
@@ -91,7 +97,7 @@
                             {{ 'SIGNUP.PASSWORD_FORMAT' | translate }}
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="col-md-6">
                         <label for="confirmPassword">{{ 'SIGNUP.CONFIRM_PASSWORD' | translate }}</label>
                         <input type="password" class="form-control" id="confirmPassword"
                             formControlName="confirmPassword"
@@ -112,12 +118,13 @@
                             *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.['pattern']">
                             {{ 'SIGNUP.PASSWORD_FORMAT' | translate }}
                         </div>
-                        <div class="invalid-feedback" *ngIf="signUpForm.hasError('passwordsNotMatching')">{{
-                            'SIGNUP.PASSWORD_MIS_MATCH' | translate }}
+                        <div class="invalid-feedback" *ngIf="confirmPasswordControl.touched && confirmPasswordControl.errors?.['matching'] &&
+                        !confirmPasswordControl.errors?.['required']">
+                            {{ 'SIGNUP.PASSWORD_MIS_MATCH' | translate }}
                         </div>
                     </div>
                 </div>
-                <br>
+                <br />
                 <div style="text-align: center;padding: 3px;">
                     <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">{{
                         'SIGNUP.SIGNUP_TEXT' | translate }}</button>&nbsp;

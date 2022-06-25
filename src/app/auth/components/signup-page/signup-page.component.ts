@@ -1,22 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/user.model';
 import { AuthService } from 'src/app/core/services/Auth/auth.service';
 import { TranslateService } from '@ngx-translate/core';
-
-class CustomValidators {
-  static passwordsMatch(control: AbstractControl): ValidationErrors {
-    const password = control.get('password')!.value;
-    const confirmPassword = control.get('confirmPassword')!.value;
-
-    if ((password === confirmPassword) && (null !== password && null !== confirmPassword)) {
-      return { passwordsNotMatching: false };
-    } else {
-      return { passwordsNotMatching: true };
-    }
-  }
-}
+import Validation from '../../utils/validation';
 
 @Component({
   selector: 'app-signup-page',
@@ -35,7 +23,8 @@ export class SignupPageComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private router: Router,
-    private readonly translateService: TranslateService) {
+    private readonly translateService: TranslateService,
+    private formBuilder: FormBuilder) {
 
   }
 
@@ -49,22 +38,25 @@ export class SignupPageComponent implements OnInit {
 
     this.emailControl = new FormControl('', [Validators.required, Validators.email]);
 
-    this.phoneNumberControl = new FormControl('', [Validators.required, Validators.maxLength(10),
-    Validators.pattern('^\\+(?:[0-9] ?){10,10}[0-9]$')]);
+    this.phoneNumberControl = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10),
+    Validators.pattern('[0-9]+')]);
 
-    this.passwordControl = new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(6),
+    this.passwordControl = new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10),
     Validators.pattern('[a-zA-Z0-9 ,]+')]);
 
-    this.confirmPasswordControl = new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(6),
+    this.confirmPasswordControl = new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10),
     Validators.pattern('[a-zA-Z0-9 ,]+'),]);
 
-    this.signUpForm = new FormGroup({
+    this.signUpForm = this.formBuilder.group({
       firstName: this.firstNameControl,
       lastName: this.lastNameControl,
       userName: this.emailControl,
       phoneNumber: this.phoneNumberControl,
-      password: this.passwordControl
-    }, { validators: CustomValidators.passwordsMatch });
+      password: this.passwordControl,
+      confirmPassword: this.confirmPasswordControl
+    }, {
+      validators: [Validation.match('password', 'confirmPassword')]
+    });
   }
 
   onFormSubmit() {
@@ -82,7 +74,7 @@ export class SignupPageComponent implements OnInit {
   }
 
   onCancelClicked() {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/auth/login');
   }
 
 }

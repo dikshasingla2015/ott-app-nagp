@@ -45,7 +45,7 @@
         "PASSWORD_REQUIRED": "Please Enter Password",
         "PASSWORD_MIN_LENGTH": "Please enter atleast 6 alpha-numeric characters",
         "PASSWORD_MAX_LENGTH": "upto 10 alpha-numeric characters are allowed",
-        "PASSWORD_FORMAT": "not in correct alpha-numeric format",
+        "PASSWORD_FORMAT": "Only alphabets and digits allowed",
         "CONFIRM_PASSWORD": "Confirm Password",
         "CONFIRM_PASSWORD_REQUIRED": "Please confirm your password",
         "PASSWORD_MIS_MATCH":"Password and confirm password should be same",
