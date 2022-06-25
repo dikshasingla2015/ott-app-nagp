@@ -69,17 +69,19 @@ export class SignupPageComponent implements OnInit {
     this.userService.addUserData(newUser).subscribe(
       data => {
         if (data === 'User Already Exists.') {
-          this.openSnackBar(data, '', "danger-style");
+          this.openSnackBar(this.translateService.instant('SIGNUP.USER_ALREADY_EXIST'),
+            '', "danger-style");
           this.signUpForm.reset();
         } else {
-          this.openSnackBar(data, '', "success-style");
+          this.openSnackBar(this.translateService.instant('SIGNUP.USER_CREATED_SUCCESSFULLY'),
+            '', "danger-style");
           this.router.navigateByUrl('/auth/login');
         }
       }
     );
   }
 
-  openSnackBar(message: string, action: string, style:string): void {
+  openSnackBar(message: string, action: string, style: string): void {
     this.snackBar.open(message, action, {
       duration: 3000,
       panelClass: [style],

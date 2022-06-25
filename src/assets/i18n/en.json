@@ -49,6 +49,8 @@
         "CONFIRM_PASSWORD": "Confirm Password",
         "CONFIRM_PASSWORD_REQUIRED": "Please confirm your password",
         "PASSWORD_MIS_MATCH":"Password and confirm password should be same",
-        "CANCEL":"Cancel"
+        "CANCEL":"Cancel",
+        "USER_ALREADY_EXIST": "User Already Exists.",
+        "USER_CREATED_SUCCESSFULLY":"User Created Successfully."
     }
 }
