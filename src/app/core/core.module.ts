@@ -35,6 +35,8 @@ const components = [
     AuthGuard,
     HeaderComponent,
     FooterComponent,
+  ],
+  providers:[
   ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {

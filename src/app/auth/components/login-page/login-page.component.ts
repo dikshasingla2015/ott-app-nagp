@@ -41,16 +41,16 @@ export class LoginPageComponent implements OnInit {
     const user: LoginDetails = this.loginForm.value as LoginDetails;
     this.userService.getUserData(user.username, user.password).subscribe(
       response => {
+        console.log(response);
         if (response !== undefined) {
           this.authService.login(user).subscribe(data => {
             this.router.navigateByUrl('/placeorder/cart');
           })
         } else {
-          //this.message = this.translateService.instant('LOGIN.INVALID_CREDS');
+          this.message = this.translateService.instant('LOGIN.INVALID_CREDS');
           this.loginForm.reset();
         }
-      },
-      error => console.log(error)
+      }
     );
   }
 

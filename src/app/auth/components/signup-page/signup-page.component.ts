@@ -74,7 +74,7 @@ export class SignupPageComponent implements OnInit {
           this.signUpForm.reset();
         } else {
           this.openSnackBar(this.translateService.instant('SIGNUP.USER_CREATED_SUCCESSFULLY'),
-            '', "danger-style");
+          '', "danger-style");
           this.router.navigateByUrl('/auth/login');
         }
       }
