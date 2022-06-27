@@ -22,7 +22,6 @@
         "PASSWORD_MAX_LENGTH": "Upto 10 alpha-numeric characters are allowed",
         "INCORRECT_FORMAT": "Only alphabets and digits allowed",
         "SIGNIN": "Sign In",
-        "SIGN_UP_TEXT": "Don't have a username and password?",
         "SIGN_UP": "Sign Up",
         "INVALID_CREDS": "Invalid Login Credentials"
     },
@@ -48,9 +47,45 @@
         "PASSWORD_FORMAT": "Only alphabets and digits allowed",
         "CONFIRM_PASSWORD": "Confirm Password",
         "CONFIRM_PASSWORD_REQUIRED": "Please confirm your password",
-        "PASSWORD_MIS_MATCH":"Password and confirm password should be same",
-        "CANCEL":"Cancel",
+        "PASSWORD_MIS_MATCH": "Password and confirm password should be same",
+        "CANCEL": "Cancel",
         "USER_ALREADY_EXIST": "User Already Exists.",
-        "USER_CREATED_SUCCESSFULLY":"User Created Successfully."
+        "USER_CREATED_SUCCESSFULLY": "User Created Successfully."
+    },
+    "ADD_MOVIE": {
+        "MOVIE_TEXT": "Add Movie Details",
+        "NAME": "Name",
+        "TITLE": "Title",
+        "DESCRIPTION": "Description",
+        "LANGUAGE": "Language",
+        "GENRE": "Genre",
+        "RATING": "IMDB Rating",
+        "IS_PRIME": "Available for Prime Users",
+        "ADD": "Add Movie",
+        "NAME_REQUIRED": "Please enter movie name",
+        "TITLE_REQUIRED": "Please enter movie title",
+        "DESCRIPTION_REQUIRED": "Please add description",
+        "IS_PRIME_REQUIRED": "Please specify if movie is prime",
+        "RATING_REQUIRED": "Please provide rating",
+        "GENRE_REQUIRED": "Please select Genre",
+        "LANGUAGE_REQUIRED": "Please select language",
+        "MIN_LENGTH": "Please enter atleast 4 characters.",
+        "ONLY_ALPHABETS": "Only alphabets allowed.",
+        "MOVIE_ALREADY_EXIST": "Movie Already Exists.",
+        "MOVIE_CREATED_SUCCESSFULLY": "Movie data added successfully."
+    },
+    "ADD_PRIME_PACKAGE": {
+        "PRIME_TEXT":"Add Prime Package Details",
+        "NAME": "Package Name",
+        "NAME_REQUIRED": "Please enter package name",
+        "MIN_LENGTH": "Package name should be of atleast 3 characters.",
+        "ONLY_ALPHABETS": "Should contain alphabets only.",
+        "DESCRIPTION": "Package Description",
+        "DURATION": "Duration in Months",
+        "DURATION_REQUIRED": "Please specify package duration in months.",
+        "DURATION_FORMAT": "Please enter numeric characters only.",
+        "PRICE": "Price",
+        "ADD": "Add Package",
+        "PACKAGE_ADDED_SUCCESSFULLY": "Package data added successfully."
     }
 }

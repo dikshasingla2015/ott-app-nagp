@@ -1,1 +1,65 @@
-<p>add-prime-package works!</p>
+<div class="container">
+    <div class="card" [style]="{'width': '28rem', 'margin-bottom': '2em'}">
+        <div class="card-header text-center">{{ 'ADD_PRIME_PACKAGE.PRIME_TEXT' | translate }}</div>
+        <div class="card-body">
+            <form class="needs-validation" nonvalidate [formGroup]="addPrimePackageForm" (ngSubmit)="onFormSubmit()">
+                <div class="col-md-12">
+                    <label for="name">{{ 'ADD_PRIME_PACKAGE.NAME' | translate }}</label>
+                    <input type="text" id="name" class="form-control" formControlName="name"
+                        [ngClass]="getControlValidationClasses(nameControl)" />
+                    <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['required']">
+                        {{ 'ADD_PRIME_PACKAGE.NAME_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['minlength']">
+                        {{ 'ADD_PRIME_PACKAGE.MIN_LENGTH' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['pattern']">
+                        {{ 'ADD_PRIME_PACKAGE.ONLY_ALPHABETS' | translate }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="durationInMonths">{{ 'ADD_PRIME_PACKAGE.DURATION' | translate }}</label>
+                    <input type="text" id="durationInMonths" class="form-control" formControlName="durationInMonths"
+                        [ngClass]="getControlValidationClasses(durationControl)" />
+                    <div class="invalid-feedback"
+                        *ngIf="durationControl.touched && durationControl.errors?.['required']">
+                        {{ 'ADD_PRIME_PACKAGE.DURATION_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="durationControl.touched && durationControl.errors?.['pattern']">
+                        {{ 'ADD_PRIME_PACKAGE.DURATION_FORMAT' | translate }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="price">{{ 'ADD_PRIME_PACKAGE.PRICE' | translate }}</label>
+                    <input type="text" id="price" class="form-control" formControlName="price"
+                        [ngClass]="getControlValidationClasses(priceControl)" />
+                    <div class="invalid-feedback" *ngIf="priceControl.touched && priceControl.errors?.['required']">
+                        {{ 'ADD_MOVIE.LANGUAGE_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback" *ngIf="priceControl.touched && priceControl.errors?.['pattern']">
+                        {{ 'ADD_PRIME_PACKAGE.DURATION_FORMAT' | translate }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="description" class="form-label">{{ 'ADD_PRIME_PACKAGE.DESCRIPTION' | translate
+                        }}</label>
+                    <textarea id="description" class="form-control" id="description" rows="1"
+                        formControlName="description" [ngClass]="getControlValidationClasses(descriptionControl)">
+                </textarea>
+                    <div class="invalid-feedback"
+                        *ngIf="descriptionControl.touched && descriptionControl.errors?.['pattern']">
+                        {{ 'ADD_PRIME_PACKAGE.ONLY_ALPHABETS' | translate }}
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;padding: 3px;">
+                    <button type="submit" class="btn btn-primary" [disabled]="!addPrimePackageForm.valid">{{
+                        'ADD_PRIME_PACKAGE.ADD' | translate }}</button>&nbsp;
+                    <button type="button" class="btn btn-primary" (click)="onCancelClicked()">{{ 'SIGNUP.CANCEL' |
+                        translate }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

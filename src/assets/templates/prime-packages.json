@@ -1,0 +1,16 @@
+[
+    {
+        "id":"1",
+        "name":"Premium",
+        "price": 399,
+        "durationInMonths": 3,
+        "description": ""
+    },
+    {
+        "id":"2",
+        "name":"Super",
+        "price": 199,
+        "durationInMonths": 1,
+        "description": ""
+    }
+]

@@ -27,3 +27,13 @@ p {
     font-weight: 600;
     text-align: center;
 }
+
+::ng-deep .danger-style {
+    background-color: brown;
+    color: white;
+}
+
+::ng-deep .success-style {
+    background-color: seagreen;
+    color: white;
+}

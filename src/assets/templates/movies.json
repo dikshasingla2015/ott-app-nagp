@@ -1,0 +1,24 @@
+[
+    {
+        "id": "",
+        "name": "",
+        "title": "",
+        "description": "",
+        "language": "",
+        "genre": "",
+        "imdbRating": 5,
+        "imageURL": "",
+        "isAvailableOnPrime": false
+    },
+    {
+        "id": "",
+        "name": "",
+        "title": "",
+        "description": "",
+        "language": "",
+        "genre": "",
+        "imdbRating": 5,
+        "imageURL": "",
+        "isAvailableOnPrime": true
+    }
+]

@@ -5,7 +5,6 @@
         "phoneNumber": "9834125612",
         "password": "abc123",
         "role": "admin",
-        "userStatus": "active",
         "isPrimeMember": true
     },
     {
@@ -14,7 +13,6 @@
         "phoneNumber": "7856983456",
         "password": "xyz567",
         "role": "user",
-        "userStatus": "active",
         "isPrimeMember": true
     },
     {
@@ -23,7 +21,6 @@
         "phoneNumber": "9856743567",
         "password": "pqr876",
         "role": "user",
-        "userStatus": "active",
         "isPrimeMember": false
     }
 ]

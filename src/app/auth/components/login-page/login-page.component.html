@@ -2,11 +2,9 @@
     <div class="card" [style]="{'width': '28rem', 'margin-bottom': '2em'}">
         <div class="card-header text-center">{{ 'LOGIN.LOGIN_TEXT' | translate }}</div>
         <div>
-            <img src="assets/images/welcome2.jpg" width="100%">
+            <img src="assets/images/login/welcome2.jpg" width="100%">
         </div>
         <div class="card-body">
-            <div class="alert alert-danger" *ngIf="message">
-                {{ message }}</div>
             <form class="needs-validation" nonvalidate [formGroup]="loginForm">
                 <div class="form-group">
                     <label for="user-name">{{ 'LOGIN.USERNAME' | translate }}</label>
@@ -20,6 +18,7 @@
                         {{ 'LOGIN.USERNAME_EMAIL' | translate }}
                     </div>
                 </div>
+                &nbsp;
                 <div class="form-group">
                     <label for="password-control">{{ 'LOGIN.PASSWORD' | translate }}</label>
                     <input type="password" class="form-control" id="password-control" formControlName="password"
@@ -42,8 +41,7 @@
                     </div>
                 </div>
             </form>
-
-            <br/>
+            <br />
             <div style="text-align: center; padding: 3px;">
                 <button type="button" class="btn btn-outline-primary" [disabled]="!loginForm.valid"
                     (click)="onLoginFormSubmit()" style="margin-right: 15px;">

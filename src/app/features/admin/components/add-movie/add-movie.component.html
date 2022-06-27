@@ -1,1 +1,119 @@
-<p>add-movie works!</p>
+<div class="container">
+    <div class="card bg-light mb-3">
+        <div class="card-header text-center">{{ 'ADD_MOVIE.MOVIE_TEXT' | translate }}</div>
+        <div class="card-body">
+            <form class="needs-validation" nonvalidate [formGroup]="addMovieForm" (ngSubmit)="onFormSubmit()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="name">{{ 'ADD_MOVIE.NAME' | translate }}</label>
+                        <input type="text" id="name" class="form-control" formControlName="name"
+                            [ngClass]="getControlValidationClasses(nameControl)" />
+                        <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['required']">
+                            {{ 'ADD_MOVIE.NAME_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['minlength']">
+                            {{ 'ADD_MOVIE.MIN_LENGTH' | translate }}
+                        </div>
+                        <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['pattern']">
+                            {{ 'ADD_MOVIE.ONLY_ALPHABETS' | translate }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="title">{{ 'ADD_MOVIE.TITLE' | translate }}</label>
+                        <input type="text" id="title" class="form-control" formControlName="title"
+                            [ngClass]="getControlValidationClasses(titleControl)" />
+                        <div class="invalid-feedback" *ngIf="titleControl.touched && titleControl.errors?.['required']">
+                            {{ 'ADD_MOVIE.TITLE_REQUIRED' | translate }}
+                        </div>
+                        <div class="invalid-feedback"
+                            *ngIf="titleControl.touched && titleControl.errors?.['minlength']">
+                            {{ 'ADD_MOVIE.MIN_LENGTH' | translate }}
+                        </div>
+                        <div class="invalid-feedback" *ngIf="titleControl.touched && titleControl.errors?.['pattern']">
+                            {{ 'ADD_MOVIE.ONLY_ALPHABETS' | translate }}
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="mb-3">
+                    <label for="description" class="form-label">{{ 'ADD_MOVIE.DESCRIPTION' | translate }}</label>
+                    <textarea id="description" class="form-control" id="description" rows="1"
+                        formControlName="description" [ngClass]="getControlValidationClasses(descriptionControl)">
+                </textarea>
+                    <div class="invalid-feedback"
+                        *ngIf="descriptionControl.touched && descriptionControl.errors?.['required']">
+                        {{ 'ADD_MOVIE.DESCRIPTION_REQUIRED' | translate }}
+                    </div>
+                    <div class="invalid-feedback"
+                        *ngIf="descriptionControl.touched && descriptionControl.errors?.['pattern']">
+                        {{ 'ADD_MOVIE.ONLY_ALPHABETS' | translate }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="language">{{ 'ADD_MOVIE.LANGUAGE' | translate }}</label>
+                        <select id="language" class="form-control" formControlName="language"
+                            [ngClass]="getControlValidationClasses(languageControl)">
+                            <option>English</option>
+                            <option>Hindi</option>
+                        </select>
+                        <div class="invalid-feedback"
+                            *ngIf="languageControl.touched && languageControl.errors?.['required']">
+                            {{ 'ADD_MOVIE.LANGUAGE_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="genre">{{ 'ADD_MOVIE.GENRE' | translate }}</label>
+                        <select id="genre" class="form-control" formControlName="genre"
+                            [ngClass]="getControlValidationClasses(genreControl)">
+                            <option>Comedy</option>
+                            <option>Action</option>
+                            <option>Sci-Fi</option>
+                            <option>Horror</option>
+                        </select>
+                        <div class="invalid-feedback" *ngIf="genreControl.touched && genreControl.errors?.['required']">
+                            {{ 'ADD_MOVIE.GENRE_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                </div>
+                &nbsp;
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="imdbRating">{{ 'ADD_MOVIE.RATING' | translate }}</label>
+                        <select id="imdbRating" class="form-control" formControlName="imdbRating"
+                            [ngClass]="getControlValidationClasses(imdbRatingControl)">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <div class="invalid-feedback"
+                            *ngIf="imdbRatingControl.touched && imdbRatingControl.errors?.['required']">
+                            {{ 'ADD_MOVIE.RATING_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="isAvailableOnPrime">{{ 'ADD_MOVIE.IS_PRIME' | translate }}</label>
+                        <select id="isAvailableOnPrime" class="form-control" formControlName="isAvailableOnPrime"
+                            [ngClass]="getControlValidationClasses(isAvailableOnPrimeControl)">
+                            <option>false</option>
+                            <option>true</option>
+                        </select>
+                        <div class="invalid-feedback"
+                            *ngIf="isAvailableOnPrimeControl.touched && isAvailableOnPrimeControl.errors?.['required']">
+                            {{ 'ADD_MOVIE.IS_PRIME_REQUIRED' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;padding: 3px;">
+                    <button type="submit" class="btn btn-primary" [disabled]="!addMovieForm.valid">{{ 'ADD_MOVIE.ADD' |
+                        translate }}</button>&nbsp;
+                    <button type="button" class="btn btn-primary" (click)="onCancelClicked()">{{ 'SIGNUP.CANCEL' |
+                        translate }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

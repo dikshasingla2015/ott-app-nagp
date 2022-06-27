@@ -7,21 +7,27 @@ import { AddPrimePackageComponent } from './components/add-prime-package/add-pri
 
 import { TranslateModule } from '@ngx-translate/core';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const components = [
   AddMovieComponent,
-  AddPrimePackageComponent
+  AddPrimePackageComponent,
+  AdminPageComponent
 ];
 
 @NgModule({
   declarations: [
-    components,
-    AdminPageComponent
+    components
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    TranslateModule
+    TranslateModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }

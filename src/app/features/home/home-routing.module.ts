@@ -13,12 +13,12 @@ const routes: Routes = [
     children: [
       {
         path: '', component: HomePageComponent, resolve: {
-          productList: MovieListResolver
+          movieList: MovieListResolver
         }
       },
       {
         path: 'viewmovie/:movieId', component: MovieDetailPageComponent, resolve: {
-          productData: MovieDataResolver
+          movieData: MovieDataResolver
         }
       }
     ],

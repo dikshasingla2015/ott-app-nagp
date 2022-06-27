@@ -74,7 +74,7 @@ export class SignupPageComponent implements OnInit {
           this.signUpForm.reset();
         } else {
           this.openSnackBar(this.translateService.instant('SIGNUP.USER_CREATED_SUCCESSFULLY'),
-          '', "danger-style");
+            '', "success-style");
           this.router.navigateByUrl('/auth/login');
         }
       }
@@ -85,8 +85,8 @@ export class SignupPageComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 3000,
       panelClass: [style],
-      verticalPosition: "top", // Allowed values are  'top' | 'bottom'
-      horizontalPosition: "right" // Allowed values are 'start' | 'center' | 'end' | 'left' | 'right'
+      verticalPosition: "top",
+      horizontalPosition: "right"
     });
   }
 
