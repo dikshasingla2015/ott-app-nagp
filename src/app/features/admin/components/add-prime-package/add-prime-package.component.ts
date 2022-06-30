@@ -47,7 +47,7 @@ export class AddPrimePackageComponent implements OnInit {
       data => {
         this.openSnackBar(this.translateService.instant('ADD_PRIME_PACKAGE.PACKAGE_ADDED_SUCCESSFULLY'),
           '', "success-style");
-        this.router.navigateByUrl('/admin');
+        this.router.navigateByUrl('/home');
       });
   }
 
@@ -68,7 +68,7 @@ export class AddPrimePackageComponent implements OnInit {
   }
 
   onCancelClicked() {
-    this.router.navigateByUrl('/admin');
+    this.router.navigateByUrl('/home');
   }
 
 }

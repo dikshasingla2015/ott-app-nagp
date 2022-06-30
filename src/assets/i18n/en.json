@@ -87,5 +87,11 @@
         "PRICE": "Price",
         "ADD": "Add Package",
         "PACKAGE_ADDED_SUCCESSFULLY": "Package data added successfully."
+    },
+    "MOVIE_DETAIL": {
+        "WATCH_MOVIE": "WATCH",
+        "MOVIE_WATCHED": "WATCHED",
+        "MARK_FAVORITE": "WISHLIST",
+        "FAVORITE_MARKED": "WISHLISTED"
     }
 }

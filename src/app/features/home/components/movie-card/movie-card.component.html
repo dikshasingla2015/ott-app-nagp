@@ -1,7 +1,7 @@
 <p-card header={{movieData.name}} subheader="{{ movieData.title }}" [style]="{width: '360px'}" class="card"
     styleClass="p-card-shadow" (click)="viewMovieDescription(movieData.id)">
     <ng-template pTemplate="header">
-        <img alt="Card" src={{movieData.imageURL}} height="460px" width="290px"
+        <img alt="Card" src={{movieData.imageURL}} height="450px" width="280px"
             (click)="viewMovieDescription(movieData.id)">
     </ng-template>
     <p>{{movieData.description}}</p>

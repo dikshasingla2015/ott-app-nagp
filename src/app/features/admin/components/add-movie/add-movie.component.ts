@@ -62,7 +62,7 @@ export class AddMovieComponent implements OnInit {
         } else {
           this.openSnackBar(this.translateService.instant('ADD_MOVIE.MOVIE_CREATED_SUCCESSFULLY'),
             '', "success-style");
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('/home');
         }
       });
   }
@@ -84,6 +84,6 @@ export class AddMovieComponent implements OnInit {
   }
 
   onCancelClicked() {
-    this.router.navigateByUrl('/admin');
+    this.router.navigateByUrl('/home');
   }
 }

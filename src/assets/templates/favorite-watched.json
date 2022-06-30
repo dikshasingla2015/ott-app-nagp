@@ -1,0 +1,26 @@
+[
+    {
+        "userId": "2",
+        "movieId": "1",
+        "isMarkedAsFavorite": true,
+        "isMarkedAsWatched": false
+    },
+    {
+        "userId": "2",
+        "movieId": "2",
+        "isMarkedAsFavorite": false,
+        "isMarkedAsWatched": true
+    },
+    {
+        "userId": "1",
+        "movieId": "3",
+        "isMarkedAsFavorite": true,
+        "isMarkedAsWatched": true
+    },
+    {
+        "userId": "1",
+        "movieId": "1",
+        "isMarkedAsFavorite": true,
+        "isMarkedAsWatched": false
+    }
+]

@@ -1,24 +1,24 @@
 [
     {
-        "id": "",
-        "name": "",
-        "title": "",
-        "description": "",
-        "language": "",
-        "genre": "",
+        "id": "1",
+        "name": "RRR",
+        "title": "RRR (Rise Roar Revolt)",
+        "description": "A fictitious story about two legendary revolutionaries and their journey away from home before they started fighting for their country in 1920s",
+        "language": "Hindi",
+        "genre": "Action",
         "imdbRating": 5,
-        "imageURL": "",
+        "imageURL": "assets/images/movies/RRR.jpg",
         "isAvailableOnPrime": false
     },
     {
-        "id": "",
-        "name": "",
-        "title": "",
-        "description": "",
-        "language": "",
-        "genre": "",
+        "id": "2",
+        "name": "Thor",
+        "title": "Thor: Love and Thunder",
+        "description": "Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",
+        "language": "English",
+        "genre": "Action",
         "imdbRating": 5,
-        "imageURL": "",
+        "imageURL": "assets/images/movies/Thor.jpg",
         "isAvailableOnPrime": true
     }
 ]

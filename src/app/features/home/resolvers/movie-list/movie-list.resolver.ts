@@ -4,19 +4,22 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { Movie } from 'src/app/core/interfaces/movie.model';
+import { catchError, Observable, of } from 'rxjs';
 import { MovieService } from 'src/app/core/services/Movie/movie.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MovieListResolver implements Resolve<Movie[]> {
+export class MovieListResolver implements Resolve<any> {
 
   constructor(private readonly movieService: MovieService) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Movie[]> {
-    return this.movieService.getMovies();
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+    return this.movieService.getMovies().pipe(
+      catchError(error => {
+        return of('No data');
+      })
+    );
   }
 
 }

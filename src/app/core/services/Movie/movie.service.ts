@@ -13,23 +13,22 @@ export class MovieService {
   readonly MOVIE_SERVICE_BASE_URL = '/assets/templates';
 
   constructor(private readonly http: HttpClient) {
-    this.getAllMovies();
-  }
-
-  public getAllMovies(): Observable<Movie[]> {
-    const url = `${this.MOVIE_SERVICE_BASE_URL}/movies.json`;
-    this.http.get<Movie[]>(url).subscribe(data => {
-      this.movieDataSubject.next(data as Movie[]);
+    this.getMovies().subscribe(data => {
+      this.movieDataSubject.next(data);
     });
-    return this.movieDataSubject.asObservable();
   }
 
   public getMovies(): Observable<Movie[]> {
+    const url = `${this.MOVIE_SERVICE_BASE_URL}/movies.json`;
+    return this.http.get<Movie[]>(url);
+  }
+
+  public getAllMovies(): Observable<Movie[]> {
     return this.movieDataSubject.asObservable();
   }
 
   public getMovieData(movieId: string): Observable<Movie> {
-    return this.getMovies().pipe(
+    return this.getAllMovies().pipe(
       map(items => items.filter(item => item.id === movieId)[0]));
   }
 

@@ -17,13 +17,8 @@ export class HomePageComponent implements OnInit {
   constructor(private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-    this.route.data.subscribe(data => {
-      this.movies = data['movieList'];
-      console.log('Data: ', data)
-      console.log('movies Data: ', data['movieList'])
+    this.route.data.subscribe((response: any) => {
+      this.movies = response.movieList;
     });
-
   }
-
 }

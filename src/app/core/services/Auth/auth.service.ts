@@ -6,6 +6,10 @@ const USER_NAME_KEY = 'AuthUserName';
 
 const USER_ROLE_KEY = 'AuthUserRole';
 
+const USER_ID_KEY = 'AuthUserID';
+
+const USER_PRIME_KEY = 'AuthUserPrime';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +24,7 @@ export class AuthService {
   public signOut(): void {
     localStorage.removeItem(USER_NAME_KEY);
     localStorage.removeItem(USER_ROLE_KEY);
+    localStorage.removeItem(USER_ID_KEY);
     localStorage.clear();
     this.isLoginSubject.next(false);
     this.isAdminSubject.next(false);
@@ -30,17 +35,35 @@ export class AuthService {
     localStorage.setItem(USER_NAME_KEY, username);
   }
 
+  public saveUserPrime(userPrime: boolean): void {
+    localStorage.removeItem(USER_PRIME_KEY);
+    localStorage.setItem(USER_PRIME_KEY, userPrime.toString());
+  }
+
   public saveUserRole(userRole: string): void {
     localStorage.removeItem(USER_ROLE_KEY);
     localStorage.setItem(USER_ROLE_KEY, userRole);
+  }
+
+  public saveUserId(userId: string): void {
+    localStorage.removeItem(USER_ID_KEY);
+    localStorage.setItem(USER_ID_KEY, userId);
   }
 
   public getUsername(): any {
     return localStorage.getItem(USER_NAME_KEY);
   }
 
+  public getUserPrime(): any {
+    return localStorage.getItem(USER_PRIME_KEY);
+  }
+
   public getUserRole(): any {
     return localStorage.getItem(USER_ROLE_KEY);
+  }
+
+  public getUserId(): any {
+    return localStorage.getItem(USER_ID_KEY);
   }
 
   public isLoggedIn(): Observable<boolean> {
@@ -54,6 +77,7 @@ export class AuthService {
   public login(user: User): Observable<string> {
     this.saveUserName(user.userName);
     this.saveUserRole(user.role);
+    this.saveUserId(user.userId);
     this.isLoginSubject.next(true);
     return of('User Logged in Successfully.');
   }
@@ -72,5 +96,5 @@ export class AuthService {
     }
     return false;
   }
-  
+
 }

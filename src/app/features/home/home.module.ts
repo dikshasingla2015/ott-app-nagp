@@ -12,6 +12,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
 
 const components = [
@@ -19,13 +20,13 @@ const components = [
   MainPageComponent,
   MovieDetailPageComponent,
   ReviewsComponent,
-  MovieCardComponent
+  MovieCardComponent,
+  MovieRatingComponent
 ];
 
 @NgModule({
   declarations: [
-    components,
-    MovieRatingComponent
+    components
   ],
   imports: [
     CommonModule,
@@ -34,7 +35,8 @@ const components = [
     TranslateModule,
     CardModule,
     ButtonModule,
-    NgbModule
+    NgbModule,
+    MatSnackBarModule
   ]
 })
 export class HomeModule { }
