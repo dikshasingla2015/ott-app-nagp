@@ -5,15 +5,10 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { MovieDetailPageComponent } from './components/movie-detail-page/movie-detail-page.component';
-import { TranslateModule } from '@ngx-translate/core';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const components = [
   HomePageComponent,
@@ -31,12 +26,7 @@ const components = [
   imports: [
     CommonModule,
     HomeRoutingModule,
-    NgxPaginationModule,
-    TranslateModule,
-    CardModule,
-    ButtonModule,
-    NgbModule,
-    MatSnackBarModule
+    SharedModule
   ]
 })
 export class HomeModule { }

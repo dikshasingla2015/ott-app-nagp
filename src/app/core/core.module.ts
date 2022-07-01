@@ -1,7 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthGuard } from './guards/auth.guard';
-import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../shared/shared.module';
 
 export class EnsureModuleLoadedOnceGuard {
   constructor(targetModule: any) {
@@ -17,10 +16,9 @@ export class EnsureModuleLoadedOnceGuard {
   ],
   imports: [
     CommonModule,
-    TranslateModule
+    SharedModule
   ],
   exports: [
-    AuthGuard
   ],
   providers:[
   ]
