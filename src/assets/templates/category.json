@@ -1,0 +1,30 @@
+[
+    {
+        "name": "English",
+        "children": [
+            {
+                "name": "Action"
+            },
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Sci-fi"
+            }
+        ]
+    },
+    {
+        "name": "Hindi",
+        "children": [
+            {
+                "name": "Action"
+            },
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Sci-fi"
+            }
+        ]
+    }
+]

@@ -1,9 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SearchMovieComponent } from './components/search-movie/search-movie.component';
-import { ShowCategoryTreeComponent } from './components/show-category-tree/show-category-tree.component';
 import { AuthGuard } from './guards/auth.guard';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -16,25 +12,15 @@ export class EnsureModuleLoadedOnceGuard {
   }
 }
 
-const components = [
-  HeaderComponent,
-  FooterComponent,
-  SearchMovieComponent,
-  ShowCategoryTreeComponent
-];
-
 @NgModule({
   declarations: [
-    components
   ],
   imports: [
     CommonModule,
     TranslateModule
   ],
   exports: [
-    AuthGuard,
-    HeaderComponent,
-    FooterComponent,
+    AuthGuard
   ],
   providers:[
   ]
