@@ -1,1 +1,9 @@
-<p>search-movie works!</p>
+<form class="form-inline my-3 my-lg-0" nonvalidate [formGroup]="searchForm">
+    <input class="form-control mr-sm-2" type="search" placeholder="{{ 'HEADER.SEARCH_TEXT' | translate }}"
+        style="width: 15rem;" aria-label="Search" formControlName="searchMovieByName"
+        [ngClass]="getControlValidationClasses(searchNameControl)" #searchElement
+        (input)="onSearchInput(searchElement.value)">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [disabled]="!searchForm.valid"
+        (click)="onSearchFormSubmit()" style="margin-left: 3px;">
+        {{ 'HEADER.SEARCH' | translate }}</button>
+</form>

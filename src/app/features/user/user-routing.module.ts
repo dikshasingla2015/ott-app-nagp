@@ -24,9 +24,8 @@ const routes: Routes = [
     path: 'opt-prime', component: TakePrimeMembershipComponent, canActivate: [AuthGuard]
   },
   {
-    path: '',
-    redirectTo: 'favorites',
-    pathMatch: 'full',
+    path: '**',
+    redirectTo: ''
   }
 ];
 

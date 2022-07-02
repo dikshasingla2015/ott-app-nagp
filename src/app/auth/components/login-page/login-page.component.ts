@@ -45,9 +45,7 @@ export class LoginPageComponent implements OnInit {
         if (response !== undefined) {
           this.authService.login(response).subscribe(data => {
             if (this.authService.getUserRole() === 'admin') {
-              this.router.navigateByUrl('/admin');
-            } else {
-              this.router.navigateByUrl('/home');
+              this.router.navigateByUrl('/movies');
             }
           });
         } else {

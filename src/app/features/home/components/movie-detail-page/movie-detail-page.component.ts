@@ -72,7 +72,7 @@ export class MovieDetailPageComponent implements OnInit {
   }
 
   onCancelClick(): void {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/movies');
   }
 
   openSnackBar(message: string, action: string, style: string): void {

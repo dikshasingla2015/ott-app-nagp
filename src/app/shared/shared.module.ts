@@ -27,11 +27,11 @@ const components = [
     components
   ],
   imports: [
-    CommonModule, RouterModule, TranslateModule, MatSnackBarModule,NgxPaginationModule,
+    CommonModule, RouterModule, TranslateModule, MatSnackBarModule, NgxPaginationModule,
     ReactiveFormsModule, CardModule, ButtonModule, NgbModule
   ],
-  exports:[
-    ReactiveFormsModule, TranslateModule, MatSnackBarModule,NgxPaginationModule, CardModule,
+  exports: [
+    ReactiveFormsModule, TranslateModule, MatSnackBarModule, NgxPaginationModule, CardModule,
     ButtonModule, NgbModule
   ]
 })

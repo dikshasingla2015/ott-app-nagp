@@ -16,15 +16,14 @@ export class FavoritesService {
 
   constructor(private movieService: MovieService,
     private readonly http: HttpClient) {
-    this.getAllFavoritesOrWatchedList();
+    this.getAllFavoritesOrWatchedList().subscribe(data => {
+      this.userFavoriteOrWatchedList.next(data as Favorites[]);
+    });
   }
 
   public getAllFavoritesOrWatchedList(): Observable<Favorites[]> {
     const url = `${this.FAVORITES_WATCHED_BASE_URL}/favorite-watched.json`;
-    this.http.get<Favorites[]>(url).subscribe(data => {
-      this.userFavoriteOrWatchedList.next(data as Favorites[]);
-    });
-    return this.userFavoriteOrWatchedList.asObservable();
+    return this.http.get<Favorites[]>(url);
   }
 
   getUserFavoritesMovies(userId: string): Observable<Movie[]> {
@@ -35,6 +34,7 @@ export class FavoritesService {
 
   getUserWatchedMovies(userId: string): Observable<Movie[]> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
+    console.log(userFavoriteWatchedList)
     const data: Favorites[] = userFavoriteWatchedList.filter(item => item.userId === userId && item.isMarkedAsWatched);
     return this.getMoviesData(data);
   }
@@ -44,6 +44,7 @@ export class FavoritesService {
     data.forEach(item => {
       this.movieService.getMovieData(item.movieId).subscribe(response => {
         movieList.push(response);
+        console.log(response);
       })
     });
     return of(movieList);

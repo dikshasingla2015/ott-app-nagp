@@ -1,6 +1,6 @@
 {
     "HEADER": {
-        "TITLE": "OTP App NAGP",
+        "TITLE": "OTP Application",
         "SELECT": "Change language",
         "SELECT_ENGLISH": "English",
         "SELECT_GERMAN": "German",
@@ -9,7 +9,13 @@
         "LOGOUT": "Logout",
         "SEARCH": "Search",
         "SEARCH_TEXT": "Search movie by name",
-        "CATEGORY_TEXT": "Select Category"
+        "GENRE_TEXT": "Select Genre",
+        "TAKE_PRIME": "Opt Prime Membership",
+        "ADD_PRIME_PACKAGE":"Add Prime Package",
+        "FAVORITES": "My Favorites",
+        "WATCHED": "My Watched Movies",
+        "ADD_MOVIE":"Add new Movie",
+        "EXPAND_MORE": "Expand More"
     },
     "LOGIN": {
         "LOGIN_TEXT": "LOGIN",

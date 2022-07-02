@@ -67,4 +67,24 @@ export class MovieService {
     return movieList.findIndex((obj => obj.id === movieId));
   }
 
+  public getMovieDataByName(name: string): void {
+    this.getAllMovies().pipe(
+      map(items =>
+        items.filter(item => (item.name.toLowerCase()).includes(name.toLowerCase()))))
+      .subscribe(data => {
+        this.movieDataSubject.next(data);
+      });
+  }
+
+  public getMovieDataByGenre(genreName: string): void {
+    this.getAllMovies().pipe(
+      map(items =>
+        items.filter(item =>
+          (item.genre.toLowerCase()).includes(genreName.toLowerCase())
+        )))
+      .subscribe(data => {
+        this.movieDataSubject.next(data);
+      });
+  }
+
 }

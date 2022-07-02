@@ -1,1 +1,29 @@
-<p>show-category-tree works!</p>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown"
+        aria-expanded="false" aria-haspopup="true">
+        {{ 'HEADER.GENRE_TEXT' | translate }}
+    </a>
+    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+        <div class="dropdown-submenu" *ngFor="let category of categoryData">
+            <a class="dropdown-item" tabindex="-1">{{category.name}}</a>
+            <div class="dropdown-menu" *ngIf="category.children">
+                <div *ngFor="let child of category.children">
+                    <li class="dropdown-submenu" *ngIf="child.children">
+                        <a class="dropdown-item">{{child.name}}</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item" *ngFor="let child1 of child.children">
+                                <div (click)="onCategorySelected(child1.name)">{{child1.name}}</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="dropdown-item" *ngIf="!child.children">
+                        <div (click)="onCategorySelected(child.name)">{{child.name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-item">
+            <div (click)="onCategorySelected('')">All</div>
+        </div>
+    </ul>
+</li>

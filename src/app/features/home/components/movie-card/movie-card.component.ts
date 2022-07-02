@@ -18,7 +18,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   viewMovieDescription(movieId: string): void {
-    this.router.navigateByUrl('/home/viewmovie/' + movieId);
+    this.router.navigateByUrl('/movies/' + movieId);
   }
 
 }

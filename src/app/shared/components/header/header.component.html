@@ -1,1 +1,55 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand header">{{ 'HEADER.TITLE' | translate }}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link header" [routerLink]="['/']">{{ 'HEADER.HOME' | translate }} </a>
+      </li>
+      &nbsp;&nbsp;
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{ 'HEADER.SELECT' | translate }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <button class="dropdown-item" (click)="changeLanguageOnSelect('en')">{{ 'HEADER.SELECT_ENGLISH' | translate
+            }}</button>
+          <button class="dropdown-item" (click)="changeLanguageOnSelect('gr')">{{ 'HEADER.SELECT_GERMAN' | translate
+            }}</button>
+        </div>
+      </li>
+      &nbsp;&nbsp;
+      <app-show-category-tree (genreText)="searchMovieByGenre($event)"></app-show-category-tree>
+      &nbsp;&nbsp;
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{ 'HEADER.EXPAND_MORE' | translate }} </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <button class="dropdown-item" [routerLink]="['/user/favorites']" *ngIf="loggedIn">{{ 'HEADER.FAVORITES' |
+            translate}} </button>
+          <button class="dropdown-item" [routerLink]="['/user/watched']" *ngIf="loggedIn">{{ 'HEADER.WATCHED' |
+            translate}} </button>
+          <button class="dropdown-item" [routerLink]="['/admin/add-movie']" *ngIf="loggedIn">{{ 'HEADER.ADD_MOVIE' |
+            translate }}</button>
+          <button class="dropdown-item" [routerLink]="['/admin/add-prime-package']" *ngIf="loggedIn">{{
+            'HEADER.ADD_PRIME_PACKAGE' | translate }}</button>
+          <button class="dropdown-item" [routerLink]="['/user/opt-prime']">{{ 'HEADER.TAKE_PRIME' | translate }}</button>
+        </div>
+      </li>
+    </ul>
+    &nbsp;&nbsp;
+    <app-search-movie (searchText)=" searchMovieByName($event)"></app-search-movie>
+    &nbsp;&nbsp;
+    <div>
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit" *ngIf="!(loggedIn)" (click)="signIn()">
+        {{ 'HEADER.LOGIN' | translate }}</button>
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit" *ngIf="loggedIn" (click)="signOut()">
+        {{ 'HEADER.LOGOUT' | translate }}</button>
+    </div>
+  </div>
+</nav>
