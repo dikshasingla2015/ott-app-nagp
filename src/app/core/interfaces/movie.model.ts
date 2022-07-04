@@ -7,5 +7,6 @@ export interface Movie {
     genre: string,
     imdbRating: number,
     imageURL: string,
-    isAvailableOnPrime: boolean
+    isAvailableOnPrime: boolean,
+    reviews: string[]
 }

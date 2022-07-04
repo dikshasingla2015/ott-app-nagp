@@ -12,11 +12,11 @@ export class ShowCategoryTreeComponent implements OnInit {
   categoryData: Category[] = [];
 
   @Output()
-  genreText: EventEmitter<string> = new EventEmitter();
+  genreText: EventEmitter<any> = new EventEmitter();
 
   constructor(private readonly categoryService: CategoryService) {
     this.categoryService.getAllMoviesCategory();
-    this.categoryService.getCategory().subscribe(data => {
+    this.categoryService.getAllMoviesCategory().subscribe(data => {
       this.categoryData = data;
     });
   }
@@ -24,8 +24,8 @@ export class ShowCategoryTreeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCategorySelected(category: string): void {
-    this.genreText.emit(category);
+  onCategorySelected(language: string, genre: string): void {
+    this.genreText.emit({language: language, genre: genre});
   }
 
 }

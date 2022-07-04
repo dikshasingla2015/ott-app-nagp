@@ -6,30 +6,29 @@
         <div class="movie-list-action">
             <div style="margin-bottom: 1rem;">
                 <div class="movie-title">{{ movieData.title }}</div>
-                <!-- <div class="movie-name">{{ movieData.name }}</div> -->
+                <div style="display: flex;margin-top: 10px;">
+                    <div class="movie-name">{{ movieData.genre }}</div>
+                    <div class="movie-name">{{ movieData.language }}</div>
+                </div>
                 <div class="movie-description">{{ movieData.description }}</div>
                 <span class="movie-ratings">
                     <app-movie-rating [imdbRating]="movieData.imdbRating"></app-movie-rating>
                 </span>
             </div>
-            <!-- <ul class="list-unstyled">
-                <li>{{ 'HOME.FEATURES' | translate }}:
-                    <ul *ngFor="let data of product.features" class="ul-data">
-                        <li>{{data}}</li>
-                    </ul>
-                </li>
-            </ul> -->
+            <app-reviews [reviews]="movieData.reviews"></app-reviews>
             <div class="buttons-align">
                 <p-button label="{{ 'MOVIE_DETAIL.MARK_FAVORITE' | translate }}" *ngIf="!(markMovieAsFavorite)"
                     icon="pi pi-heart" styleClass="p-button-primary" (click)="addMovieToFavorite(movieData.id)"
                     [style]="{'margin-left': '.5em'}">
                 </p-button>
-                <p-button label="{{ 'MOVIE_DETAIL.FAVORITE_MARKED' | translate }}" *ngIf="markMovieAsFavorite" icon="pi pi-heart-fill"
-                    styleClass="p-button-primary" (click)="viewFavoriteMoviesList()" [style]="{'margin-left': '.5em'}">
+                <p-button label="{{ 'MOVIE_DETAIL.FAVORITE_MARKED' | translate }}" *ngIf="markMovieAsFavorite"
+                    icon="pi pi-heart-fill" styleClass="p-button-primary" (click)="viewFavoriteMoviesList()"
+                    [style]="{'margin-left': '.5em'}">
                 </p-button>
-                <p-button label="{{ 'SIGNUP.CANCEL' | translate }}" icon="pi pi-times" styleClass="p-button-help"
+                <p-button label="{{ 'SIGNUP.CANCEL' | translate }}" styleClass="p-button-help"
                     (click)="onCancelClick()">
                 </p-button>
+                <app-write-review [movieId]="movieData.id"></app-write-review>
             </div>
         </div>
     </div>

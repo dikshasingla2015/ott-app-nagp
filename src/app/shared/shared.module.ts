@@ -13,6 +13,7 @@ import { ButtonModule } from 'primeng/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PageLayoutComponent } from './components/page-layout/page-layout.component';
+import { DialogModule } from 'primeng/dialog';
 
 const components = [
   HeaderComponent,
@@ -28,11 +29,11 @@ const components = [
   ],
   imports: [
     CommonModule, RouterModule, TranslateModule, MatSnackBarModule, NgxPaginationModule,
-    ReactiveFormsModule, CardModule, ButtonModule, NgbModule
+    ReactiveFormsModule, CardModule, ButtonModule, NgbModule, DialogModule
   ],
   exports: [
     ReactiveFormsModule, TranslateModule, MatSnackBarModule, NgxPaginationModule, CardModule,
-    ButtonModule, NgbModule
+    ButtonModule, NgbModule, DialogModule
   ]
 })
 export class SharedModule { }

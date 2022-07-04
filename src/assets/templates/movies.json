@@ -5,10 +5,16 @@
         "title": "RRR (Rise Roar Revolt)",
         "description": "A fictitious story about two legendary revolutionaries and their journey away from home before they started fighting for their country in 1920s",
         "language": "Hindi",
-        "genre": "Action",
+        "genre": "Action, Drama",
         "imdbRating": 5,
         "imageURL": "assets/images/movies/RRR.jpg",
-        "isAvailableOnPrime": false
+        "isAvailableOnPrime": false,
+        "reviews":[
+            "Pride of Indian Cinema #RRR",
+            "Ravishing, Refreshing, Recommendable.",
+            "A weak writing sparkled by Rajamouli's extraordinary mass elements and Ram Charan & Jr. NTR's larger-than-life characters",
+            "A Magnificent Movie By SS Rajamouli"
+        ]
     },
     {
         "id": "2",
@@ -16,9 +22,11 @@
         "title": "Thor: Love and Thunder",
         "description": "Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",
         "language": "English",
-        "genre": "Action",
+        "genre": "Action, Adventure, Comedy",
         "imdbRating": 5,
         "imageURL": "assets/images/movies/Thor.jpg",
-        "isAvailableOnPrime": true
+        "isAvailableOnPrime": true,
+        "reviews":[
+        ]
     }
 ]

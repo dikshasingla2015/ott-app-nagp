@@ -25,6 +25,7 @@ export class MovieDetailPageComponent implements OnInit {
     private readonly translateService: TranslateService,
     private snackBar: MatSnackBar,
     private readonly router: Router) {
+
     this.markMovieAsFavorite = false;
     this.markMovieAsWatched = false;
   }
@@ -33,6 +34,12 @@ export class MovieDetailPageComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.movieData = data['movieData'];
     });
+    if (this.authService.isLoggedIn()) {
+      const response = this.favoritesService.findMovieInUserList(this.authService.getUserId(), this.movieData.id);
+      this.markMovieAsFavorite = response.isMarkedAsFavorite;
+      this.markMovieAsWatched = response.isMarkedAsWatched;
+    }
+
   }
 
   addMovieToFavorite(movieId: string): void {
@@ -64,11 +71,11 @@ export class MovieDetailPageComponent implements OnInit {
   }
 
   viewFavoriteMoviesList(): void {
-    this.router.navigateByUrl('/placeorder/cart');
+    this.router.navigateByUrl('/user/favorites');
   }
 
   viewAllWatchedMoviesList(): void {
-    this.router.navigateByUrl('/placeorder/cart');
+    this.router.navigateByUrl('/user/watched');
   }
 
   onCancelClick(): void {

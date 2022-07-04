@@ -1,0 +1,49 @@
+.card-group {
+    margin-top: 20px;
+}
+
+.main-data{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: brown;
+}
+
+.card-data {
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.duration {
+    float: right;
+    font-weight: 600;
+}
+
+.price {
+    float: left;
+    font-weight: 600;
+}
+
+.price-duration {
+    display: inline-block;
+    width: 70%;
+}
+
+.description{
+    margin-top: 5px;
+}
+
+.align-center{
+    text-align: center;
+}
+
+::ng-deep .success-style {
+    background-color: seagreen;
+    color: white;
+}

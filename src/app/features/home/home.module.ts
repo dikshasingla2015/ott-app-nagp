@@ -8,13 +8,15 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { WriteReviewComponent } from './components/write-review/write-review.component';
 
 const components = [
   HomePageComponent,
   MovieDetailPageComponent,
   ReviewsComponent,
   MovieCardComponent,
-  MovieRatingComponent
+  MovieRatingComponent,
+  WriteReviewComponent
 ];
 
 @NgModule({

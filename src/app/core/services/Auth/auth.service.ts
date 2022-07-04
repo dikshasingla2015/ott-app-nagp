@@ -25,6 +25,7 @@ export class AuthService {
     localStorage.removeItem(USER_NAME_KEY);
     localStorage.removeItem(USER_ROLE_KEY);
     localStorage.removeItem(USER_ID_KEY);
+    localStorage.removeItem(USER_PRIME_KEY);
     localStorage.clear();
     this.isLoginSubject.next(false);
     this.isAdminSubject.next(false);
@@ -35,9 +36,9 @@ export class AuthService {
     localStorage.setItem(USER_NAME_KEY, username);
   }
 
-  public saveUserPrime(userPrime: boolean): void {
+  public saveUserPrime(): void {
     localStorage.removeItem(USER_PRIME_KEY);
-    localStorage.setItem(USER_PRIME_KEY, userPrime.toString());
+    localStorage.setItem(USER_PRIME_KEY, "true");
   }
 
   public saveUserRole(userRole: string): void {
@@ -78,6 +79,9 @@ export class AuthService {
     this.saveUserName(user.userName);
     this.saveUserRole(user.role);
     this.saveUserId(user.userId);
+    if (user.isPrimeMember) {
+      this.saveUserPrime();
+    }
     this.isLoginSubject.next(true);
     return of('User Logged in Successfully.');
   }

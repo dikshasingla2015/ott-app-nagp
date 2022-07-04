@@ -4,6 +4,7 @@ import { AuthGuard } from 'src/app/core/guards/auth.guard';
 import { TakePrimeMembershipComponent } from './components/take-prime-membership/take-prime-membership.component';
 import { ViewFavoritesListComponent } from './components/view-favorites-list/view-favorites-list.component';
 import { ViewWatchedListComponent } from './components/view-watched-list/view-watched-list.component';
+import { PrimePackageResolver } from './resolvers/prime-packages/prime-package.resolver';
 import { UserFavoritesListResolver } from './resolvers/user-favorites-list/user-favorites-list.resolver';
 import { UserWatchedListResolver } from './resolvers/user-watched-list/user-watched-list.resolver';
 
@@ -21,11 +22,14 @@ const routes: Routes = [
     }
   },
   {
-    path: 'opt-prime', component: TakePrimeMembershipComponent, canActivate: [AuthGuard]
+    path: 'opt-prime', component: TakePrimeMembershipComponent, canActivate: [AuthGuard],
+    resolve: {
+      primePackagesList: PrimePackageResolver
+    }
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'movies'
   }
 ];
 

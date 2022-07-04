@@ -1,0 +1,20 @@
+<p-button (click)="showModalDialog()" label="{{ 'WRITE_REVIEW.REVIEW_BUTTON' | translate }}">
+</p-button>
+<p-dialog header="{{ 'WRITE_REVIEW.REVIEW_TEXT' | translate }}" [(visible)]="displayModal" [modal]="true"
+    [style]="{width: '50vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <form class="needs-validation" nonvalidate [formGroup]="reviewForm">
+        <div class="form-group">
+            <label for="review">{{ 'WRITE_REVIEW.REVIEW' | translate }}</label>
+            <input type="text" class="form-control" id="review" formControlName="review"
+                [ngClass]="getControlValidationClasses(reviewControl)">
+            <div class="invalid-feedback" *ngIf="reviewControl.touched && reviewControl.errors?.['required']">
+                {{ 'WRITE_REVIEW.REVIEW_REQUIRED' | translate }}
+            </div>
+        </div>
+    </form>
+    <ng-template pTemplate="footer">
+        <p-button label="{{
+            'WRITE_REVIEW.SAVE' | translate }}" [disabled]="!reviewForm.valid" (click)="onReviewFormSubmit()"
+            class="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>

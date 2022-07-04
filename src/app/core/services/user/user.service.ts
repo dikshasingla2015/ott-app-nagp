@@ -46,4 +46,15 @@ export class UserService {
     return userData.find(data => data.userName === userName) !== undefined ? true : false;
   }
 
+  public updateUserPrimeStatus(userId: string) {
+    const userData = this.userSubject.getValue();
+    const index = this.findUserIndex(userData, userId);
+    userData[index].isPrimeMember = true;
+    this.userSubject.next(userData);
+  }
+
+  public findUserIndex(userData: User[], userId: string): number {
+    return userData.findIndex((obj => obj.userId === userId));
+  }
+
 }

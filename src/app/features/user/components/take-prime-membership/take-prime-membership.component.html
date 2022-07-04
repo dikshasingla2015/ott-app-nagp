@@ -1,1 +1,21 @@
-<p>take-prime-membership works!</p>
+<div class="container">
+    <p class="main-data">{{ 'OPT_PRIME.TITLE' | translate }}</p>
+    <div class="card-group">
+        <div class="card-data" *ngFor="let prime of primePackages">
+            <p-card header="{{prime.name}}" subheader="{{prime.description}}"
+                [style]="{'width': '20rem', 'margin-bottom': '2em', 'height': '250px'}">
+                <div class="price-duration">
+                    <span class="price">{{prime.price | currency:'INR': 'symbol' : '1.0-0'}}</span>
+                    <span class="duration">{{prime.durationInMonths}} {{ 'OPT_PRIME.DURATION' | translate }}</span>
+                </div>
+                <br />
+                <ng-template pTemplate="footer">
+                    <div class="align-center">
+                        <p-button label="Proceed" icon="pi pi-prime" (click)="takePrimeMembership()">
+                        </p-button>
+                    </div>
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+</div>

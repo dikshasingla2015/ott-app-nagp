@@ -60,8 +60,8 @@ export class HeaderComponent implements OnInit {
     this.movieService.getMovieDataByName(searchText);
   }
 
-  searchMovieByGenre(category: string): void {
-    this.movieService.getMovieDataByGenre(category);
+  searchMovieByGenre(data: any): void {
+    this.movieService.getMovieDataByGenre(data.language, data.genre);
   }
 
 }

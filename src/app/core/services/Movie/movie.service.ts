@@ -47,44 +47,38 @@ export class MovieService {
     return movieList.find(data => data.name === movieName) !== undefined ? true : false;
   }
 
-  public updateMovieDetails(movieObj: Movie): Observable<string> {
-    const movieList = this.movieDataSubject.getValue();
-    const movieIndex = this.findMovieIndex(movieList, movieObj.id);
-    movieList[movieIndex] = movieObj;
-    this.movieDataSubject.next(movieList);
-    return of('Movie data updated successfully.')
+  public getMovieDataByName(name: string): void {
+    this.getMovies().pipe(
+      map(items =>
+        items.filter(item =>
+          (item.name.toLowerCase()).includes(name.toLowerCase())
+        )))
+      .subscribe(data => {
+        this.movieDataSubject.next(data);
+      });
   }
 
-  public deleteMovieDetails(id: string): Observable<string> {
-    const movieList = this.movieDataSubject.getValue();
-    const movieIndex = this.findMovieIndex(movieList, id);
-    movieList.splice(movieIndex, 1);
-    this.movieDataSubject.next(movieList);
-    return of('Movie data deleted successfully.')
+  public getMovieDataByGenre(language: string, genreName: string): void {
+    this.getMovies().pipe(
+      map(items =>
+        items.filter(item =>
+          (item.language.toLowerCase().includes(language.toLowerCase())) &&
+          (item.genre.toLowerCase()).includes(genreName.toLowerCase())
+        )))
+      .subscribe(data => {
+        this.movieDataSubject.next(data);
+      });
   }
 
   public findMovieIndex(movieList: Movie[], movieId: string): number {
     return movieList.findIndex((obj => obj.id === movieId));
   }
 
-  public getMovieDataByName(name: string): void {
-    this.getAllMovies().pipe(
-      map(items =>
-        items.filter(item => (item.name.toLowerCase()).includes(name.toLowerCase()))))
-      .subscribe(data => {
-        this.movieDataSubject.next(data);
-      });
-  }
-
-  public getMovieDataByGenre(genreName: string): void {
-    this.getAllMovies().pipe(
-      map(items =>
-        items.filter(item =>
-          (item.genre.toLowerCase()).includes(genreName.toLowerCase())
-        )))
-      .subscribe(data => {
-        this.movieDataSubject.next(data);
-      });
+  public addMovieReview(movieId: string, review: string): void {
+    const movieList = this.movieDataSubject.getValue();
+    const movieIndex = this.findMovieIndex(movieList, movieId);
+    movieList[movieIndex].reviews.push(review);
+    this.movieDataSubject.next(movieList);
   }
 
 }

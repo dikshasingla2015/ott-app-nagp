@@ -16,14 +16,14 @@ export class FavoritesService {
 
   constructor(private movieService: MovieService,
     private readonly http: HttpClient) {
-    this.getAllFavoritesOrWatchedList().subscribe(data => {
-      this.userFavoriteOrWatchedList.next(data as Favorites[]);
-    });
+    this.getAllFavoritesOrWatchedList();
   }
 
-  public getAllFavoritesOrWatchedList(): Observable<Favorites[]> {
+  public getAllFavoritesOrWatchedList(): void {
     const url = `${this.FAVORITES_WATCHED_BASE_URL}/favorite-watched.json`;
-    return this.http.get<Favorites[]>(url);
+    this.http.get<Favorites[]>(url).subscribe(data => {
+      this.userFavoriteOrWatchedList.next(data);
+    });
   }
 
   getUserFavoritesMovies(userId: string): Observable<Movie[]> {
@@ -34,7 +34,6 @@ export class FavoritesService {
 
   getUserWatchedMovies(userId: string): Observable<Movie[]> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
-    console.log(userFavoriteWatchedList)
     const data: Favorites[] = userFavoriteWatchedList.filter(item => item.userId === userId && item.isMarkedAsWatched);
     return this.getMoviesData(data);
   }
@@ -44,7 +43,6 @@ export class FavoritesService {
     data.forEach(item => {
       this.movieService.getMovieData(item.movieId).subscribe(response => {
         movieList.push(response);
-        console.log(response);
       })
     });
     return of(movieList);
@@ -52,7 +50,7 @@ export class FavoritesService {
 
   addMovieAsFavorite(dataObj: Favorites): Observable<string> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
-    let response = this.findMovieInUserList(userFavoriteWatchedList, dataObj.userId, dataObj.movieId);
+    let response = this.findMovieInUserList(dataObj.userId, dataObj.movieId);
     if (response !== undefined) {
       response.isMarkedAsFavorite = true;
       userFavoriteWatchedList.push(response);
@@ -65,7 +63,7 @@ export class FavoritesService {
 
   addMovieAsWatched(dataObj: Favorites): Observable<string> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
-    let response = this.findMovieInUserList(userFavoriteWatchedList, dataObj.userId, dataObj.movieId);
+    let response = this.findMovieInUserList(dataObj.userId, dataObj.movieId);
     if (response !== undefined) {
       response.isMarkedAsWatched = true;
       userFavoriteWatchedList.push(response);
@@ -78,7 +76,7 @@ export class FavoritesService {
 
   removeMovieAsFavorite(userId: string, movieId: string): Observable<string> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
-    let response = this.findMovieInUserList(userFavoriteWatchedList, userId, movieId);
+    let response = this.findMovieInUserList(userId, movieId);
     if (response !== undefined) {
       response.isMarkedAsFavorite = false;
       userFavoriteWatchedList.push(response);
@@ -88,9 +86,9 @@ export class FavoritesService {
     return of('No movie found');
   }
 
-  findMovieInUserList(userFavoriteWatchedList: Favorites[], userId: string, movieId: string) {
-    return userFavoriteWatchedList.find(item =>
-      item.userId === userId && item.movieId === movieId);
+  findMovieInUserList(userId: string, movieId: string): Favorites {
+    return this.userFavoriteOrWatchedList.getValue().find(item =>
+      item.userId === userId && item.movieId === movieId) as Favorites;
   }
 
 }

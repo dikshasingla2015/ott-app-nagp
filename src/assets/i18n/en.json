@@ -11,10 +11,10 @@
         "SEARCH_TEXT": "Search movie by name",
         "GENRE_TEXT": "Select Genre",
         "TAKE_PRIME": "Opt Prime Membership",
-        "ADD_PRIME_PACKAGE":"Add Prime Package",
+        "ADD_PRIME_PACKAGE": "Add Prime Package",
         "FAVORITES": "My Favorites",
         "WATCHED": "My Watched Movies",
-        "ADD_MOVIE":"Add new Movie",
+        "ADD_MOVIE": "Add new Movie",
         "EXPAND_MORE": "Expand More"
     },
     "LOGIN": {
@@ -81,7 +81,7 @@
         "MOVIE_CREATED_SUCCESSFULLY": "Movie data added successfully."
     },
     "ADD_PRIME_PACKAGE": {
-        "PRIME_TEXT":"Add Prime Package Details",
+        "PRIME_TEXT": "Add Prime Package Details",
         "NAME": "Package Name",
         "NAME_REQUIRED": "Please enter package name",
         "MIN_LENGTH": "Package name should be of atleast 3 characters.",
@@ -99,5 +99,21 @@
         "MOVIE_WATCHED": "WATCHED",
         "MARK_FAVORITE": "WISHLIST",
         "FAVORITE_MARKED": "WISHLISTED"
+    },
+    "OPT_PRIME": {
+        "TITLE": "Select a Plan",
+        "DURATION": "Months",
+        "SUCCESSFULL": "Welcome to Family."
+    },
+    "HOME": {
+        "REVIEWS": "Reviews",
+        "NO_REVIEW_FOUND": "No Reviews Found."
+    },
+    "WRITE_REVIEW": {
+        "REVIEW_BUTTON": "Write Review",
+        "REVIEW_TEXT": "Please share your review",
+        "REVIEW": "Enter Review",
+        "REVIEW_REQUIRED": "Please enter review text",
+        "SAVE": "Save"
     }
 }
