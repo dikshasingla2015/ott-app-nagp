@@ -16,10 +16,10 @@ export class TakePrimeMembershipComponent implements OnInit {
   primePackages: PrimePackage[] = [];
 
   constructor(private readonly route: ActivatedRoute,
-    private authService: AuthService,
-    private userService: UserService,
-    private router: Router,
-    private snackBar: MatSnackBar,
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+    private readonly router: Router,
+    private readonly snackBar: MatSnackBar,
     private readonly translateService: TranslateService) { }
 
   ngOnInit(): void {
@@ -28,11 +28,11 @@ export class TakePrimeMembershipComponent implements OnInit {
     });
   }
 
-  takePrimeMembership(){
+  takePrimeMembership() {
     this.authService.saveUserPrime();
     this.userService.updateUserPrimeStatus(this.authService.getUserId());
     this.openSnackBar(this.translateService.instant('OPT_PRIME.SUCCESSFULL'),
-    '', "success-style");
+      '', "success-style");
     this.router.navigateByUrl('/movies');
   }
 

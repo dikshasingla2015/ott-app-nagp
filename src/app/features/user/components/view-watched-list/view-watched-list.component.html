@@ -1,0 +1,19 @@
+<div class="container" *ngIf="watchedMovies.length > 0">
+    <div class="cart-page-header">
+        <p>{{ 'VIEW_WATCHED.TITLE' | translate }}</p>
+    </div>
+    <div class="card-group">
+        <div style="padding: 5px; margin: 10px;" *ngFor="let movie of watchedMovies 
+        | paginate : { id: 'movie_listing_pagination',
+        itemsPerPage : 6,currentPage : page,totalItems : totalRecords}">
+            <app-movie-card [movieData]="movie"></app-movie-card>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" style=" margin: 0 auto; text-align: center;">
+        <pagination-controls id="movie_listing_pagination" (pageChange)="page=$event">
+        </pagination-controls>
+    </div>
+</div>
+<div class="cart-page-header" *ngIf = "watchedMovies.length === 0">
+    <p>{{ 'VIEW_WATCHED.NO_WATCHED_MOVIES_FOUND' | translate }}</p>
+</div>

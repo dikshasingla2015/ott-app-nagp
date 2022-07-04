@@ -6,6 +6,7 @@ import { TakePrimeMembershipComponent } from './components/take-prime-membership
 import { ViewFavoritesListComponent } from './components/view-favorites-list/view-favorites-list.component';
 import { ViewWatchedListComponent } from './components/view-watched-list/view-watched-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { HomeModule } from '../home/home.module';
 
 const components = [
   TakePrimeMembershipComponent,
@@ -20,9 +21,10 @@ const components = [
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    HomeModule
   ],
-  exports:[
+  exports: [
   ]
 })
 export class UserModule { }

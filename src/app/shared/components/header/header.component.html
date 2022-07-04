@@ -34,9 +34,9 @@
             translate}} </button>
           <button class="dropdown-item" [routerLink]="['/user/watched']" *ngIf="loggedIn">{{ 'HEADER.WATCHED' |
             translate}} </button>
-          <button class="dropdown-item" [routerLink]="['/admin/add-movie']" *ngIf="loggedIn">{{ 'HEADER.ADD_MOVIE' |
+          <button class="dropdown-item" [routerLink]="['/admin/add-movie']" *ngIf="isAdmin">{{ 'HEADER.ADD_MOVIE' |
             translate }}</button>
-          <button class="dropdown-item" [routerLink]="['/admin/add-prime-package']" *ngIf="loggedIn">{{
+          <button class="dropdown-item" [routerLink]="['/admin/add-prime-package']" *ngIf="isAdmin">{{
             'HEADER.ADD_PRIME_PACKAGE' | translate }}</button>
           <button class="dropdown-item" [routerLink]="['/user/opt-prime']">{{ 'HEADER.TAKE_PRIME' | translate }}</button>
         </div>

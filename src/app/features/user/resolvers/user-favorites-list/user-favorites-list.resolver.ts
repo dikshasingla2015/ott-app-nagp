@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Resolve } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Movie } from 'src/app/core/interfaces/movie.model';
 import { AuthService } from 'src/app/core/services/Auth/auth.service';
 import { FavoritesService } from 'src/app/core/services/Favorites/favorites.service';
@@ -18,7 +14,7 @@ export class UserFavoritesListResolver implements Resolve<Movie[]> {
     private authService: AuthService) {
 
   }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Movie[]> {
+  resolve(): Observable<Movie[]> {
     return this.favoriteService.getUserFavoritesMovies(this.authService.getUserId());
   }
 }

@@ -1,1 +1,25 @@
-<p>view-favorites-list works!</p>
+<div class="container" *ngIf="favorites.length > 0">
+    <p-orderList [value]="favorites" [listStyle]="{'max-height':'30rem'}"
+        header="{{ 'VIEW_FAVOURITES.TITLE' | translate }}">
+        <ng-template let-movieData pTemplate="item">
+            <div class="movie-item">
+                <div class="image-container">
+                    <img src="{{movieData.imageURL}}" class="movie-image" (click)="viewMovieDescription(movieData.id)">
+                </div>
+                <div class="movie-list-detail">
+                    <h5 class="mb-2">{{movieData.name}}</h5>
+                    <span class="movie-category">{{ movieData.title }}</span>
+                </div>
+                <div class="movie-list-action">
+                    <h6 class="mb-2">{{movieData.genre}}</h6>
+                    <div class="item-remove" (click)="removeMovieFromFavorite(movieData.id)">
+                        <i class="pi pi-trash" style="color: red; font-size: 1.2em;"></i>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-orderList>
+</div>
+<div class="movie-page-header" *ngIf="favorites.length === 0">
+    <p>{{ 'VIEW_FAVOURITES.NO_FAVOTITE_MOVIES_FOUND' | translate }}</p>
+</div>

@@ -27,6 +27,9 @@ const components = [
     CommonModule,
     HomeRoutingModule,
     SharedModule
+  ],
+  exports: [
+    MovieCardComponent
   ]
 })
 export class HomeModule { }

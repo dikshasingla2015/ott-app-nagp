@@ -82,6 +82,9 @@ export class AuthService {
     if (user.isPrimeMember) {
       this.saveUserPrime();
     }
+    if (user.role === 'admin') {
+      this.isAdminSubject.next(true);
+    }
     this.isLoginSubject.next(true);
     return of('User Logged in Successfully.');
   }

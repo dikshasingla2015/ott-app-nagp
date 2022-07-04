@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'otp-app-nagp';
+  title = 'ott-app-nagp';
 
   language = '';
 

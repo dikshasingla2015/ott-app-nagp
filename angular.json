@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "otp-app-nagp": {
+    "ott-app-nagp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/otp-app-nagp",
+            "outputPath": "dist/ott-app-nagp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "otp-app-nagp:build:production"
+              "browserTarget": "ott-app-nagp:build:production"
             },
             "development": {
-              "browserTarget": "otp-app-nagp:build:development"
+              "browserTarget": "ott-app-nagp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "otp-app-nagp:build"
+            "browserTarget": "ott-app-nagp:build"
           }
         },
         "test": {

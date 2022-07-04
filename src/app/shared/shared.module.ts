@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PageLayoutComponent } from './components/page-layout/page-layout.component';
 import { DialogModule } from 'primeng/dialog';
+import { OrderListModule } from 'primeng/orderlist';
 
 const components = [
   HeaderComponent,
@@ -29,11 +30,11 @@ const components = [
   ],
   imports: [
     CommonModule, RouterModule, TranslateModule, MatSnackBarModule, NgxPaginationModule,
-    ReactiveFormsModule, CardModule, ButtonModule, NgbModule, DialogModule
+    ReactiveFormsModule, CardModule, ButtonModule, NgbModule, DialogModule, OrderListModule
   ],
   exports: [
     ReactiveFormsModule, TranslateModule, MatSnackBarModule, NgxPaginationModule, CardModule,
-    ButtonModule, NgbModule, DialogModule
+    ButtonModule, NgbModule, DialogModule, OrderListModule
   ]
 })
 export class SharedModule { }

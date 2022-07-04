@@ -34,12 +34,11 @@ export class MovieDetailPageComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.movieData = data['movieData'];
     });
-    if (this.authService.isLoggedIn()) {
+    if (this.authService.isAuthenticated()) {
       const response = this.favoritesService.findMovieInUserList(this.authService.getUserId(), this.movieData.id);
       this.markMovieAsFavorite = response.isMarkedAsFavorite;
       this.markMovieAsWatched = response.isMarkedAsWatched;
     }
-
   }
 
   addMovieToFavorite(movieId: string): void {

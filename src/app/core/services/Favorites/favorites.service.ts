@@ -50,10 +50,9 @@ export class FavoritesService {
 
   addMovieAsFavorite(dataObj: Favorites): Observable<string> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
-    let response = this.findMovieInUserList(dataObj.userId, dataObj.movieId);
-    if (response !== undefined) {
-      response.isMarkedAsFavorite = true;
-      userFavoriteWatchedList.push(response);
+    let response = this.findIndexofMovieInUserList(dataObj.userId, dataObj.movieId);
+    if (response !== -1) {
+      userFavoriteWatchedList[response].isMarkedAsFavorite = true;
     } else {
       userFavoriteWatchedList.push(dataObj);
     }
@@ -63,10 +62,9 @@ export class FavoritesService {
 
   addMovieAsWatched(dataObj: Favorites): Observable<string> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
-    let response = this.findMovieInUserList(dataObj.userId, dataObj.movieId);
-    if (response !== undefined) {
-      response.isMarkedAsWatched = true;
-      userFavoriteWatchedList.push(response);
+    let response = this.findIndexofMovieInUserList(dataObj.userId, dataObj.movieId);
+    if (response !== -1) {
+      userFavoriteWatchedList[response].isMarkedAsWatched = true;
     } else {
       userFavoriteWatchedList.push(dataObj);
     }
@@ -76,14 +74,18 @@ export class FavoritesService {
 
   removeMovieAsFavorite(userId: string, movieId: string): Observable<string> {
     const userFavoriteWatchedList = this.userFavoriteOrWatchedList.getValue();
-    let response = this.findMovieInUserList(userId, movieId);
-    if (response !== undefined) {
-      response.isMarkedAsFavorite = false;
-      userFavoriteWatchedList.push(response);
+    let response = this.findIndexofMovieInUserList(userId, movieId);
+    if (response !== -1) {
+      userFavoriteWatchedList[response].isMarkedAsFavorite = false;
       this.userFavoriteOrWatchedList.next(userFavoriteWatchedList);
       return of('Movie removed from favorites successfully');
     }
     return of('No movie found');
+  }
+
+  findIndexofMovieInUserList(userId: string, movieId: string): number {
+    return this.userFavoriteOrWatchedList.getValue().findIndex(item =>
+      item.userId === userId && item.movieId === movieId);
   }
 
   findMovieInUserList(userId: string, movieId: string): Favorites {

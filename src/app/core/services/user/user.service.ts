@@ -14,19 +14,22 @@ export class UserService {
   userSubject = new BehaviorSubject<User[]>([]);
 
   constructor(private readonly http: HttpClient) {
-    this.getAllUsers();
+    this.getAllUsers().subscribe(users => {
+      this.userSubject.next(users as User[]);
+    });
   }
 
   public getAllUsers(): Observable<User[]> {
     const url = `${this.USER_SERVICE_BASE_URL}/users.json`;
-    this.http.get<User[]>(url).subscribe(users => {
-      this.userSubject.next(users as User[]);
-    });
+    return this.http.get<User[]>(url);
+  }
+
+  public getUsers(): Observable<User[]> {
     return this.userSubject.asObservable();
   }
 
   public getUserData(userName: string, password: string): Observable<User> {
-    return this.getAllUsers().pipe(
+    return this.getUsers().pipe(
       map(items =>
         items.filter(item => item.userName === userName && item.password === password)[0]));
   }

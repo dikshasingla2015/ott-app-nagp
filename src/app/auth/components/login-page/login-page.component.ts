@@ -44,9 +44,7 @@ export class LoginPageComponent implements OnInit {
       response => {
         if (response !== undefined) {
           this.authService.login(response).subscribe(data => {
-            if (this.authService.getUserRole() === 'admin') {
-              this.router.navigateByUrl('/movies');
-            }
+            this.router.navigateByUrl('/movies');
           });
         } else {
           this.openSnackBar(this.translateService.instant('LOGIN.INVALID_CREDS'),

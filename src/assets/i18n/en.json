@@ -1,6 +1,6 @@
 {
     "HEADER": {
-        "TITLE": "OTP Application",
+        "TITLE": "OTT Application",
         "SELECT": "Change language",
         "SELECT_ENGLISH": "English",
         "SELECT_GERMAN": "German",
@@ -115,5 +115,13 @@
         "REVIEW": "Enter Review",
         "REVIEW_REQUIRED": "Please enter review text",
         "SAVE": "Save"
+    },
+    "VIEW_WATCHED": {
+        "TITLE":"My Watched Movies",
+        "NO_WATCHED_MOVIES_FOUND":"No Watched Movies Found"
+    },
+    "VIEW_FAVOURITES":{
+        "TITLE":"My Favourite Movies",
+        "NO_FAVOTITE_MOVIES_FOUND":"No Favourite Movies Found"
     }
 }
