@@ -15,7 +15,8 @@
         "FAVORITES": "My Favorites",
         "WATCHED": "My Watched Movies",
         "ADD_MOVIE": "Add new Movie",
-        "EXPAND_MORE": "Expand More"
+        "EXPAND_MORE": "Expand More",
+        "CONTINUE_BROWSING": "Let's Watch some movie."
     },
     "LOGIN": {
         "LOGIN_TEXT": "LOGIN",
@@ -98,7 +99,11 @@
         "WATCH_MOVIE": "WATCH",
         "MOVIE_WATCHED": "WATCHED",
         "MARK_FAVORITE": "WISHLIST",
-        "FAVORITE_MARKED": "WISHLISTED"
+        "FAVORITE_MARKED": "WISHLISTED",
+        "MARK_WATCHED": "WATCH",
+        "WATCHED_MARKED": "WATCHED",
+        "PRIME": "Prime",
+        "MOVIE_MARKED_AS_FAVORITE": "Movie Marked as Favorite."
     },
     "OPT_PRIME": {
         "TITLE": "Select a Plan",
@@ -117,11 +122,11 @@
         "SAVE": "Save"
     },
     "VIEW_WATCHED": {
-        "TITLE":"My Watched Movies",
-        "NO_WATCHED_MOVIES_FOUND":"No Watched Movies Found"
+        "TITLE": "My Watched Movies",
+        "NO_WATCHED_MOVIES_FOUND": "No Watched Movies Found"
     },
-    "VIEW_FAVOURITES":{
-        "TITLE":"My Favourite Movies",
-        "NO_FAVOTITE_MOVIES_FOUND":"No Favourite Movies Found"
+    "VIEW_FAVOURITES": {
+        "TITLE": "My Favourite Movies",
+        "NO_FAVOTITE_MOVIES_FOUND": "No Favourite Movies Found"
     }
 }

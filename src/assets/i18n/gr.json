@@ -1,0 +1,132 @@
+{
+    "HEADER": {
+        "TITLE": "OTT-Anwendung",
+        "SELECT": "Sprache änderPrime-Paket hinzufügenn",
+        "SELECT_ENGLISH": "Englisch",
+        "SELECT_GERMAN": "Deutsch",
+        "HOME": "Heim",
+        "LOGIN": "Anmeldung",
+        "LOGOUT": "Ausloggen",
+        "SEARCH": "Suche",
+        "SEARCH_TEXT": "Film nach Namen suchen",
+        "GENRE_TEXT": "Genre auswählen",
+        "TAKE_PRIME": "Entscheiden Sie sich für die Prime-Mitgliedschaft",
+        "ADD_PRIME_PACKAGE": "Prime-Paket hinzufügen",
+        "FAVORITES": "Meine Favoriten",
+        "WATCHED": "Meine angesehenen Filme",
+        "ADD_MOVIE": "Neuen Film hinzufügen",
+        "EXPAND_MORE": "Erweitern Sie mehr",
+        "CONTINUE_BROWSING": "Sehen wir uns einen Film an."
+    },
+    "LOGIN": {
+        "LOGIN_TEXT": "ANMELDUNG",
+        "USERNAME": "Nutzername",
+        "USERNAME_REQUIRED": "Bitte geben sie einen Benutzernamen ein",
+        "USERNAME_EMAIL": "Der Benutzername muss vom Typ E-Mail sein",
+        "PASSWORD": "Passwort",
+        "PASSWORD_REQUIRED": "Bitte Passwort eingeben",
+        "PASSWORD_MIN_LENGTH": "Bitte geben Sie mindestens 6 alphanumerische Zeichen ein",
+        "PASSWORD_MAX_LENGTH": "Es sind bis zu 10 alphanumerische Zeichen erlaubt",
+        "INCORRECT_FORMAT": "Nur Buchstaben und Ziffern erlaubt",
+        "SIGNIN": "Einloggen",
+        "SIGN_UP": "Anmeldung",
+        "INVALID_CREDS": "Ungültige Login-Details"
+    },
+    "SIGNUP": {
+        "SIGNUP_TEXT": "Anmeldung",
+        "FIRST_NAME": "Vorname",
+        "FIRST_NAME_REQUIRED": "Bitte geben Sie Ihren Vornamen ein",
+        "LAST_NAME": "Nachname",
+        "LAST_NAME_REQUIRED": "Bitte geben Sie ihren Nachnamen ein",
+        "NAME_MIN_LENGTH": "muss mindestens die Länge 3 haben",
+        "NAME_FORMAT": "nur alphabetische Zeichen erlaubt",
+        "EMAIL": "Email",
+        "EMAIL_REQUIRED": "Bitte E-Mail-ID eingeben",
+        "EMAIL_FORMAT": "E-Mail-Muster erforderlich",
+        "PHONE_NUMBER": "Telefonnummer",
+        "PHONE_NUMBER_REQUIRED": "Bitte gib deine Telefonnummer ein",
+        "PHONE_NUMBER_MAX_LENGTH": "Es sind bis zu 10 numerische Zeichen erlaubt",
+        "PHONE_NUMBER_FORMAT": "bitte nur Nummern eingeben",
+        "PASSWORD": "Passwort",
+        "PASSWORD_REQUIRED": "Bitte Passwort eingeben",
+        "PASSWORD_MIN_LENGTH": "Bitte geben Sie mindestens 6 alphanumerische Zeichen ein",
+        "PASSWORD_MAX_LENGTH": "Es sind bis zu 10 alphanumerische Zeichen zulässig",
+        "PASSWORD_FORMAT": "Nur Buchstaben und Ziffern erlaubt",
+        "CONFIRM_PASSWORD": "Passwort bestätigen",
+        "CONFIRM_PASSWORD_REQUIRED": "Bitte bestätigen Sie Ihr Passwort",
+        "PASSWORD_MIS_MATCH": "Passwort und Bestätigungspasswort sollten gleich sein",
+        "CANCEL": "Absagen",
+        "USER_ALREADY_EXIST": "Benutzer existiert bereits.",
+        "USER_CREATED_SUCCESSFULLY": "Benutzer erfolgreich erstellt."
+    },
+    "ADD_MOVIE": {
+        "MOVIE_TEXT": "Filmdetails hinzufügen",
+        "NAME": "Name",
+        "TITLE": "Titel",
+        "DESCRIPTION": "Beschreibung",
+        "LANGUAGE": "Sprache",
+        "GENRE": "Genre",
+        "RATING": "IMDB-Rating",
+        "IS_PRIME": "Verfügbar für Prime-Benutzer",
+        "ADD": "Film hinzufügen",
+        "NAME_REQUIRED": "Bitte geben Sie den Filmnamen ein",
+        "TITLE_REQUIRED": "Bitte Filmtitel eingeben",
+        "DESCRIPTION_REQUIRED": "Bitte Beschreibung hinzufügen",
+        "IS_PRIME_REQUIRED": "Bitte geben Sie an, ob der Film Prime ist",
+        "RATING_REQUIRED": "Bitte Bewertung abgeben",
+        "GENRE_REQUIRED": "Bitte Genre auswählen",
+        "LANGUAGE_REQUIRED": "Bitte Sprache auswählen",
+        "MIN_LENGTH": "Bitte geben Sie mindestens 4 Zeichen ein.",
+        "ONLY_ALPHABETS": "Nur Alphabete erlaubt.",
+        "MOVIE_ALREADY_EXIST": "Film existiert bereits.",
+        "MOVIE_CREATED_SUCCESSFULLY": "Filmdaten erfolgreich hinzugefügt."
+    },
+    "ADD_PRIME_PACKAGE": {
+        "PRIME_TEXT": "Prime-Paketdetails hinzufügen",
+        "NAME": "Paketnamen",
+        "NAME_REQUIRED": "Bitte geben Sie den Paketnamen ein",
+        "MIN_LENGTH": "Der Paketname sollte mindestens 3 Zeichen lang sein.",
+        "ONLY_ALPHABETS": "Sollte nur Buchstaben enthalten.",
+        "DESCRIPTION": "Paketbeschreibung",
+        "DURATION": "Dauer in Monaten",
+        "DURATION_REQUIRED": "Bitte Paketdauer in Monaten angeben.",
+        "DURATION_FORMAT": "Bitte geben Sie nur Ziffern ein.",
+        "PRICE": "Preis",
+        "ADD": "Paket hinzufügen",
+        "PACKAGE_ADDED_SUCCESSFULLY": "Paketdaten erfolgreich hinzugefügt."
+    },
+    "MOVIE_DETAIL": {
+        "WATCH_MOVIE": "UHR",
+        "MOVIE_WATCHED": "SCHAUTE",
+        "MARK_FAVORITE": "WUNSCHZETTEL",
+        "FAVORITE_MARKED": "WUNSCHLISTE",
+        "MARK_WATCHED": "UHR",
+        "WATCHED_MARKED": "SCHAUTE",
+        "PRIME": "Prime",
+        "MOVIE_MARKED_AS_FAVORITE": "Film als Favorit markiert."
+    },
+    "OPT_PRIME": {
+        "TITLE": "Wählen Sie einen Plan aus",
+        "DURATION": "Monate",
+        "SUCCESSFULL": "Willkommen in der Familie."
+    },
+    "HOME": {
+        "REVIEWS": "Bewertungen",
+        "NO_REVIEW_FOUND": "Keine Bewertungen gefunden."
+    },
+    "WRITE_REVIEW": {
+        "REVIEW_BUTTON": "Bewertung schreiben",
+        "REVIEW_TEXT": "Bitte teilen Sie Ihre Bewertung",
+        "REVIEW": "Geben Sie Überprüfung ein",
+        "REVIEW_REQUIRED": "Bitte geben Sie den Bewertungstext ein",
+        "SAVE": "Speichern"
+    },
+    "VIEW_WATCHED": {
+        "TITLE": "Meine angesehenen Filme",
+        "NO_WATCHED_MOVIES_FOUND": "Keine angesehenen Filme gefunden"
+    },
+    "VIEW_FAVOURITES": {
+        "TITLE": "Meine Lieblingsfilme",
+        "NO_FAVOTITE_MOVIES_FOUND": "Keine Lieblingsfilme gefunden"
+    }
+}

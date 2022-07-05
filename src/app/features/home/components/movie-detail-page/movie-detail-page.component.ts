@@ -15,19 +15,22 @@ import { FavoritesService } from 'src/app/core/services/Favorites/favorites.serv
 export class MovieDetailPageComponent implements OnInit {
 
   movieData!: Movie;
+  isPrimeUser: boolean = false;
+  showWatchButton = true;
 
-  markMovieAsFavorite = false;
-  markMovieAsWatched = false;
+  markMovieAsFavorite: boolean = false;
+  markMovieAsWatched: boolean = false;
 
   constructor(private readonly route: ActivatedRoute,
-    private authService: AuthService,
-    private favoritesService: FavoritesService,
+    private readonly authService: AuthService,
+    private readonly favoritesService: FavoritesService,
     private readonly translateService: TranslateService,
-    private snackBar: MatSnackBar,
+    private readonly snackBar: MatSnackBar,
     private readonly router: Router) {
 
     this.markMovieAsFavorite = false;
     this.markMovieAsWatched = false;
+
   }
 
   ngOnInit(): void {
@@ -36,8 +39,16 @@ export class MovieDetailPageComponent implements OnInit {
     });
     if (this.authService.isAuthenticated()) {
       const response = this.favoritesService.findMovieInUserList(this.authService.getUserId(), this.movieData.id);
-      this.markMovieAsFavorite = response.isMarkedAsFavorite;
-      this.markMovieAsWatched = response.isMarkedAsWatched;
+      if (response !== undefined) {
+        this.markMovieAsFavorite = response.isMarkedAsFavorite;
+        this.markMovieAsWatched = response.isMarkedAsWatched;
+      }
+      this.isPrimeUser = this.authService.getUserPrime() !== undefined ? true : false;
+    }
+    if (this.movieData.isAvailableOnPrime && this.isPrimeUser) {
+      this.showWatchButton = true;
+    } else if (this.movieData.isAvailableOnPrime && !this.isPrimeUser) {
+      this.showWatchButton = false;
     }
   }
 
@@ -49,9 +60,9 @@ export class MovieDetailPageComponent implements OnInit {
       isMarkedAsWatched: false
     } as Favorites;
     this.favoritesService.addMovieAsFavorite(data).subscribe(data => {
-      this.openSnackBar(this.translateService.instant('LOGIN.INVALID_CREDS'),//change
-        '', "success-style");
       this.markMovieAsFavorite = true;
+      this.openSnackBar(this.translateService.instant('MOVIE_DETAIL.MOVIE_MARKED_AS_FAVORITE'),
+        '', "success-style");
     });
   }
 
@@ -63,9 +74,7 @@ export class MovieDetailPageComponent implements OnInit {
       isMarkedAsWatched: true
     } as Favorites;
     this.favoritesService.addMovieAsWatched(data).subscribe(data => {
-      this.openSnackBar(this.translateService.instant('LOGIN.INVALID_CREDS'),//change
-        '', "success-style");
-      this.markMovieAsFavorite = true;
+      this.markMovieAsWatched = true;
     });
   }
 

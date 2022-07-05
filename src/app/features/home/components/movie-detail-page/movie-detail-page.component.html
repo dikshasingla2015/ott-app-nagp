@@ -1,4 +1,4 @@
-<div class="card div-data">
+<div class="card div-data" *ngIf="movieData !== undefined">
     <div class="p-col-12" class="align-value">
         <div class="movie-list-item">
             <img src={{movieData.imageURL}} [alt]="movieData.name" />
@@ -9,6 +9,10 @@
                 <div style="display: flex;margin-top: 10px;">
                     <div class="movie-name">{{ movieData.genre }}</div>
                     <div class="movie-name">{{ movieData.language }}</div>
+                    <div class="movie-name" *ngIf="movieData.isAvailableOnPrime">
+                        <i class="pi pi-prime" style="font-size: 1.1rem;
+                        color: goldenrod;"></i>{{ 'MOVIE_DETAIL.PRIME' | translate }}
+                    </div>
                 </div>
                 <div class="movie-description">{{ movieData.description }}</div>
                 <span class="movie-ratings">
@@ -18,17 +22,27 @@
             <app-reviews [reviews]="movieData.reviews"></app-reviews>
             <div class="buttons-align">
                 <p-button label="{{ 'MOVIE_DETAIL.MARK_FAVORITE' | translate }}" *ngIf="!(markMovieAsFavorite)"
-                    icon="pi pi-heart" styleClass="p-button-primary" (click)="addMovieToFavorite(movieData.id)"
-                    [style]="{'margin-left': '.5em'}">
+                    icon="pi pi-heart" styleClass="p-button-outlined p-button-rounded"
+                    (click)="addMovieToFavorite(movieData.id)" [style]="{'margin-left': '.5em'}">
                 </p-button>
                 <p-button label="{{ 'MOVIE_DETAIL.FAVORITE_MARKED' | translate }}" *ngIf="markMovieAsFavorite"
-                    icon="pi pi-heart-fill" styleClass="p-button-primary" (click)="viewFavoriteMoviesList()"
+                    icon="pi pi-heart-fill" styleClass="p-button-outlined p-button-rounded"
+                    (click)="viewFavoriteMoviesList()" [style]="{'margin-left': '.5em'}">
+                </p-button>
+                <p-button label="{{ 'MOVIE_DETAIL.MARK_WATCHED' | translate }}"
+                    *ngIf="showWatchButton && !(markMovieAsWatched)" icon="pi pi-eye"
+                    styleClass="p-button-outlined p-button-rounded p-button-success"
+                    (click)="addMovieToWatchList(movieData.id)" [style]="{'margin-left': '.5em'}">
+                </p-button>
+                <p-button label="{{ 'MOVIE_DETAIL.WATCHED_MARKED' | translate }}" *ngIf="markMovieAsWatched"
+                    icon="pi pi-eye-slash" styleClass="p-button-outlined p-button-rounded p-button-success"
+                    (click)="viewAllWatchedMoviesList()" [style]="{'margin-left': '.5em'}">
+                </p-button>
+                <p-button label="{{ 'SIGNUP.CANCEL' | translate }}"
+                    styleClass="p-button-outlined p-button-rounded p-button-danger" (click)="onCancelClick()"
                     [style]="{'margin-left': '.5em'}">
                 </p-button>
-                <p-button label="{{ 'SIGNUP.CANCEL' | translate }}" styleClass="p-button-help"
-                    (click)="onCancelClick()">
-                </p-button>
-                <app-write-review [movieId]="movieData.id"></app-write-review>
+                <app-write-review *ngIf="markMovieAsWatched" [movieId]="movieData.id"></app-write-review>
             </div>
         </div>
     </div>
