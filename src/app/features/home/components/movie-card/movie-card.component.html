@@ -4,5 +4,11 @@
         <img alt="Card" src={{movieData.imageURL}} height="450px" width="280px"
             (click)="viewMovieDescription(movieData.id)">
     </ng-template>
-    <p>{{movieData.description}}</p>
+    <div style="display: flex;">
+        <div class="movie-name">{{ movieData.genre }}</div>
+        <div class="movie-name" *ngIf="movieData.isAvailableOnPrime">
+            <i class="pi pi-prime" style="font-size: 1.1rem;
+            color: goldenrod;"></i>{{ 'MOVIE_DETAIL.PRIME' | translate }}
+        </div>
+    </div>
 </p-card>

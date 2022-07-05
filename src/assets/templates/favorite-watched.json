@@ -1,26 +1,50 @@
 [
     {
         "userId": "2",
-        "movieId": "1",
+        "movieId": "3",
         "isMarkedAsFavorite": true,
         "isMarkedAsWatched": false
     },
     {
         "userId": "2",
-        "movieId": "2",
+        "movieId": "7",
         "isMarkedAsFavorite": false,
         "isMarkedAsWatched": true
     },
     {
-        "userId": "1",
-        "movieId": "2",
+        "userId": "2",
+        "movieId": "11",
         "isMarkedAsFavorite": true,
         "isMarkedAsWatched": true
     },
     {
         "userId": "1",
-        "movieId": "1",
+        "movieId": "4",
+        "isMarkedAsFavorite": true,
+        "isMarkedAsWatched": true
+    },
+    {
+        "userId": "1",
+        "movieId": "8",
         "isMarkedAsFavorite": true,
         "isMarkedAsWatched": false
+    },
+    {
+        "userId": "1",
+        "movieId": "12",
+        "isMarkedAsFavorite": false,
+        "isMarkedAsWatched": true
+    },
+    {
+        "userId": "3",
+        "movieId": "9",
+        "isMarkedAsFavorite": false,
+        "isMarkedAsWatched": true
+    },
+    {
+        "userId": "3",
+        "movieId": "14",
+        "isMarkedAsFavorite": true,
+        "isMarkedAsWatched": true
     }
 ]

@@ -22,6 +22,8 @@
 </div>
 <div class="movie-page-header" *ngIf="favorites.length === 0">
     <p>{{ 'VIEW_FAVOURITES.NO_FAVOTITE_MOVIES_FOUND' | translate }}</p>
-    <button pButton pRipple type="button" class="p-button-rounded p-button-secondary" routerLink="/">
-        {{ 'HEADER.CONTINUE_BROWSING' | translate }}</button>
+    <div class="text-center">
+        <button pButton pRipple type="button" class="p-button-rounded p-button-secondary" routerLink="/">
+            {{ 'HEADER.CONTINUE_BROWSING' | translate }}</button>
+    </div>
 </div>

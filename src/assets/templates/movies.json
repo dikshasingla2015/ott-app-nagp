@@ -9,7 +9,7 @@
         "imdbRating": 5,
         "imageURL": "assets/images/movies/RRR.jpg",
         "isAvailableOnPrime": false,
-        "reviews":[
+        "reviews": [
             "Pride of Indian Cinema #RRR",
             "Ravishing, Refreshing, Recommendable.",
             "A weak writing sparkled by Rajamouli's extraordinary mass elements and Ram Charan & Jr. NTR's larger-than-life characters",
@@ -26,7 +26,225 @@
         "imdbRating": 5,
         "imageURL": "assets/images/movies/Thor.jpg",
         "isAvailableOnPrime": true,
-        "reviews":[
+        "reviews": [
+            "Flying High",
+            "Amazing entertainment"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Pushpa",
+        "title": "Pushpa: The Rise - Part 1",
+        "description": "A labourer rises through ranks of a smuggling syndicate, infuriating some powerful forces in the process.",
+        "language": "Hindi",
+        "genre": "Action, Adventure, Crime",
+        "imdbRating": 2,
+        "imageURL": "assets/images/movies/pushpa.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "Same type action movie",
+            "Overstretched and way overrated",
+            "Stop glorifying stupid movies",
+            "Quite a waste of time"
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Top Gun",
+        "title": "Top Gun: Maverick",
+        "description": "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
+        "language": "English",
+        "genre": "Action, Drama",
+        "imdbRating": 5,
+        "imageURL": "assets/images/movies/topGun.jpeg",
+        "isAvailableOnPrime": true,
+        "reviews": [
+            "The truly epic blockbuster we needed.",
+            "Best Sequel yet",
+            "The real cinema experience!"
+        ]
+    },
+    {
+        "id": "5",
+        "name": "The Batman",
+        "title": "The Batman",
+        "description": "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
+        "language": "English",
+        "genre": "Action, Crime, Drama",
+        "imdbRating": 2,
+        "imageURL": "assets/images/movies/batman.jpeg",
+        "isAvailableOnPrime": true,
+        "reviews": [
+            "DETECTIVE BATMAN AT ITS PEAK!",
+            "Overblown, overhyped latest addition to the Batman franchise",
+            "Melodramatic, monstrously long, mediocre, and boring."
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Spider-Man",
+        "title": "Spider-Man: No Way Home",
+        "description": "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+        "language": "English",
+        "genre": "Action, Adventure, Fantasy",
+        "imdbRating": 3,
+        "imageURL": "assets/images/movies/spiderman.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "Great concept, mediocre execution",
+            "Somehow better than Endgame",
+            "A franchise in decline, and this meta nonsense doesn't help",
+            "SUPERHERO EXTRAVAGANZA!!!"
+        ]
+    },
+    {
+        "id": "7",
+        "name": "Panchayat",
+        "title": "Panchayat: Season 1",
+        "description": "A comedy-drama, which captures the journey of an engineering graduate Abhishek, who for lack of a better job option joins as secretary of a Panchayat office in a remote village of Uttar Pradesh.",
+        "language": "Hindi",
+        "genre": "Comedy, Drama",
+        "imdbRating": 4,
+        "imageURL": "assets/images/movies/panchayat1.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "Kab Tak Dil Jeetego TVF",
+            "Heartfelt, kind and honest, Panchayat marks a turning point for comedy series in India",
+            "Another gem fron TVF",
+            "Simplistic yet Graceful"
+        ]
+    },
+    {
+        "id": "8",
+        "name": "Fullmetal Alchemist",
+        "title": "Fullmetal Alchemist: Brotherhood",
+        "description": "Two brothers search for a Philosopher's Stone after an attempt to revive their deceased mother goes awry and leaves them in damaged physical forms.",
+        "language": "English",
+        "genre": "Animation, Action, Adventure",
+        "imdbRating": 5,
+        "imageURL": "assets/images/movies/fullmetal.jpg",
+        "isAvailableOnPrime": true,
+        "reviews": [
+            "Just might be the perfect mainstream series",
+            "No complaints, seriously. FANTASTIC.",
+            "A Fantastic Reboot",
+            "Pretty much the best show made in the history of mankind"
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Scam 1992",
+        "title": "Scam 1992: The Harshad Mehta Story",
+        "description": "Set in 1980s and '90s Bombay, it follows the life of Harshad Mehta, a stockbroker who took the stock market to dizzying heights and his catastrophic downfall.",
+        "language": "Hindi",
+        "genre": "Biography, Crime, Drama",
+        "imdbRating": 4,
+        "imageURL": "assets/images/movies/scam1992.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "Strong screenplay that needs to be seen.",
+            "One Of The Best Indian Web Series i Ever Seen",
+            "Once a lifetime experience to watch",
+            "Probably the best of 2020"
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Friends",
+        "title": "Friends",
+        "description": "Set in 1980s and '90s Bombay, it follows the life of Harshad Mehta, a stockbroker who took the stock market to dizzying heights and his catastrophic downfall.",
+        "language": "English",
+        "genre": "Comedy, Romance",
+        "imdbRating": 5,
+        "imageURL": "assets/images/movies/friends.jpg",
+        "isAvailableOnPrime": true,
+        "reviews": [
+            "One of the best t.v. shows ever!",
+            "A timeless and endless classic",
+            "All-time great sitcom!"
+        ]
+    },
+    {
+        "id": "11",
+        "name": "Kota Factory",
+        "title": "Kota Factory",
+        "description": "Dedicated to Shrimati SL Loney ji, Shri Irodov ji and Maanniya HC Verma ji, 'Kota Factory' is TVF's latest original. India's first 'Black and White' show highlights the problems present day IIT-JEE aspirants face in their day-to-day lives.",
+        "language": "Hindi",
+        "genre": "Comedy, Drama",
+        "imdbRating": 4,
+        "imageURL": "assets/images/movies/kotafactory.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "Bollywood needs to learn from this",
+            "Surreal TVF, Back again.",
+            "Authentic, Well made and Heart Touching"
+        ]
+    },
+    {
+        "id": "12",
+        "name": "Gullak",
+        "title": "Gullak: Season 1",
+        "description": "Set in quaint by-lanes in the heart of India, Gullak is a collection of disarming and relatable tales of the Mishra family.",
+        "language": "Hindi",
+        "genre": "Comedy, Drama, Family",
+        "imdbRating": 4,
+        "imageURL": "assets/images/movies/gullak.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "Nostalgic",
+            "Takes you back in time. Very well directed",
+            "Best web series of the year",
+            "TVF Impress Everytime"
+        ]
+    },
+    {
+        "id": "13",
+        "name": "Gullak",
+        "title": "Gullak: Season 1",
+        "description": "Set in quaint by-lanes in the heart of India, Gullak is a collection of disarming and relatable tales of the Mishra family.",
+        "language": "Hindi",
+        "genre": "Comedy, Drama, Family",
+        "imdbRating": 4,
+        "imageURL": "assets/images/movies/gullak.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "Nostalgic",
+            "Takes you back in time. Very well directed",
+            "Best web series of the year",
+            "TVF Impress Everytime"
+        ]
+    },
+    {
+        "id": "14",
+        "name": "The Family Man",
+        "title": "The Family Man: Season 1",
+        "description": "A working man from the National Investigation Agency tries to protect the nation from terrorism, but he also needs to keep his family safe from his secret job.",
+        "language": "Hindi",
+        "genre": "Comedy, Drama, Action",
+        "imdbRating": 4,
+        "imageURL": "assets/images/movies/familyman.jpg",
+        "isAvailableOnPrime": false,
+        "reviews": [
+            "A near perfect indian espionage thriller",
+            "Wait is over and mind has blown.",
+            "In the battle between Sacred Games and Mirzapur, The Family Man wins the war."
+        ]
+    },
+    {
+        "id": "15",
+        "name": "Chhichhore",
+        "title": "Chhichhore",
+        "description": "A tragic incident forces Anirudh, a middle-aged man, to take a trip down memory lane and reminisce his college days along with his friends, who were labelled as losers.",
+        "language": "Hindi",
+        "genre": "Comedy, Drama, Romance",
+        "imdbRating": 5,
+        "imageURL": "assets/images/movies/chichore.jpg",
+        "isAvailableOnPrime": true,
+        "reviews": [
+            "Blockbuster ( Comedy, Inspiring)",
+            "Worth watch",
+            "It's time to shrug off the underdog tag!",
+            "EVOCATIVE!"
         ]
     }
 ]

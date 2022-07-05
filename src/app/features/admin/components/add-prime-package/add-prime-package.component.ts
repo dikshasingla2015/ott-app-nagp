@@ -26,11 +26,10 @@ export class AddPrimePackageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.nameControl = new FormControl('', [Validators.required, Validators.minLength(3),
-    Validators.pattern('[a-zA-Z ,]+')]);
+    this.nameControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
     this.durationControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]);
     this.priceControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]);
-    this.descriptionControl = new FormControl('', [Validators.pattern('[a-zA-Z ,]+')]);
+    this.descriptionControl = new FormControl('', []);
 
     this.addPrimePackageForm = new FormGroup({
       name: this.nameControl,

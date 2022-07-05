@@ -14,8 +14,10 @@
         </pagination-controls>
     </div>
 </div>
-<div class="cart-page-header" *ngIf = "watchedMovies.length === 0">
+<div class="cart-page-header" *ngIf="watchedMovies.length === 0">
     <p>{{ 'VIEW_WATCHED.NO_WATCHED_MOVIES_FOUND' | translate }}</p>
-    <button pButton pRipple type="button" class="p-button-rounded p-button-secondary" routerLink="/">
-        {{ 'HEADER.CONTINUE_BROWSING' | translate }}</button>
+    <div class="text-center">
+        <button pButton pRipple type="button" class="p-button-rounded p-button-secondary" routerLink="/">
+            {{ 'HEADER.CONTINUE_BROWSING' | translate }}</button>
+    </div>
 </div>

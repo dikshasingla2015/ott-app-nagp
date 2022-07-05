@@ -9,10 +9,13 @@
                 "name": "Comedy"
             },
             {
-                "name": "Sci-fi"
+                "name": "Adventure"
             },
             {
-                "name": "Horror"
+                "name": "Romance"
+            },
+            {
+                "name": "Fantasy"
             }
         ]
     },
@@ -26,10 +29,16 @@
                 "name": "Comedy"
             },
             {
-                "name": "Sci-fi"
+                "name": "Drama"
             },
             {
-                "name": "Horror"
+                "name": "Crime"
+            },
+            {
+                "name": "Romance"
+            },
+            {
+                "name": "Family"
             }
         ]
     }

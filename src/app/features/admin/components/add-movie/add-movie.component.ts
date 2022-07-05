@@ -37,7 +37,7 @@ export class AddMovieComponent implements OnInit {
     this.genreControl = new FormControl('', [Validators.required]);
     this.imdbRatingControl = new FormControl('', [Validators.required]);
     this.isAvailableOnPrimeControl = new FormControl('', [Validators.required]);
-    this.descriptionControl = new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ,]+')]);
+    this.descriptionControl = new FormControl('', [Validators.required]);
 
     this.addMovieForm = new FormGroup({
       name: this.nameControl,
@@ -54,6 +54,8 @@ export class AddMovieComponent implements OnInit {
   onFormSubmit() {
     const newMovie: Movie = this.addMovieForm.value;
     newMovie.imageURL = "/assets/images/movies/default.jpg";
+    newMovie.isAvailableOnPrime = (newMovie.isAvailableOnPrime.toString() === 'true');
+    newMovie.reviews = [];
     this.movieService.addMovieDetails(newMovie).subscribe(
       data => {
         if (data === 'Movie Already Exists.') {

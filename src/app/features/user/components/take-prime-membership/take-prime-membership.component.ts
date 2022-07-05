@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { PrimePackage } from 'src/app/core/interfaces/prime-package.model';
 import { AuthService } from 'src/app/core/services/Auth/auth.service';
+import { PrimePackageService } from 'src/app/core/services/Prime/prime-package.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
@@ -20,11 +21,15 @@ export class TakePrimeMembershipComponent implements OnInit {
     private readonly userService: UserService,
     private readonly router: Router,
     private readonly snackBar: MatSnackBar,
-    private readonly translateService: TranslateService) { }
+    private readonly translateService: TranslateService,
+    private primePackageService: PrimePackageService) { }
 
   ngOnInit(): void {
     this.route.data.subscribe((response: any) => {
       this.primePackages = response.primePackagesList;
+    });
+    this.primePackageService.getPrimePackages().subscribe(data => {
+      this.primePackages = data;
     });
   }
 

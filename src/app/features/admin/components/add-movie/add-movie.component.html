@@ -44,10 +44,6 @@
                         *ngIf="descriptionControl.touched && descriptionControl.errors?.['required']">
                         {{ 'ADD_MOVIE.DESCRIPTION_REQUIRED' | translate }}
                     </div>
-                    <div class="invalid-feedback"
-                        *ngIf="descriptionControl.touched && descriptionControl.errors?.['pattern']">
-                        {{ 'ADD_MOVIE.ONLY_ALPHABETS' | translate }}
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -68,8 +64,9 @@
                             [ngClass]="getControlValidationClasses(genreControl)">
                             <option>Comedy</option>
                             <option>Action</option>
-                            <option>Sci-Fi</option>
-                            <option>Horror</option>
+                            <option>Drama</option>
+                            <option>Family</option>
+                            <option>Romance</option>
                         </select>
                         <div class="invalid-feedback" *ngIf="genreControl.touched && genreControl.errors?.['required']">
                             {{ 'ADD_MOVIE.GENRE_REQUIRED' | translate }}

@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -66,11 +67,8 @@ describe('MovieCardComponent', () => {
     expect(component.movieData.id).toBe('1');
   });
 
-  it('should render the description of the movie in the p tag', () => {
-    component.movieData = dummyMovie;
-    fixture.detectChanges();
-
-    expect(fixture.nativeElement.querySelector('p').textContent).toBe('dummy data test case');
+  it('should render each div for product details', () => {
+    expect(fixture.debugElement.queryAll(By.css('div')).length).toBe(9);
   });
 
   it('should navigate to movie description page', inject([Router], (router: Router) => {

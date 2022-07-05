@@ -13,9 +13,6 @@
                     <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['minlength']">
                         {{ 'ADD_PRIME_PACKAGE.MIN_LENGTH' | translate }}
                     </div>
-                    <div class="invalid-feedback" *ngIf="nameControl.touched && nameControl.errors?.['pattern']">
-                        {{ 'ADD_PRIME_PACKAGE.ONLY_ALPHABETS' | translate }}
-                    </div>
                 </div>
                 <div class="col-md-12">
                     <label for="durationInMonths">{{ 'ADD_PRIME_PACKAGE.DURATION' | translate }}</label>
@@ -47,10 +44,6 @@
                     <textarea id="description" class="form-control" id="description" rows="1"
                         formControlName="description" [ngClass]="getControlValidationClasses(descriptionControl)">
                 </textarea>
-                    <div class="invalid-feedback"
-                        *ngIf="descriptionControl.touched && descriptionControl.errors?.['pattern']">
-                        {{ 'ADD_PRIME_PACKAGE.ONLY_ALPHABETS' | translate }}
-                    </div>
                 </div>
                 <br>
                 <div style="text-align: center;padding: 3px;">
