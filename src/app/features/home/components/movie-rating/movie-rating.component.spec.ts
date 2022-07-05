@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MovieRatingComponent } from './movie-rating.component';
 
@@ -8,7 +9,10 @@ describe('MovieRatingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MovieRatingComponent ]
+      declarations: [ MovieRatingComponent ],
+      imports:[
+        NgbModule
+      ]
     })
     .compileComponents();
 

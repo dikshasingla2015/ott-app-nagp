@@ -29,8 +29,8 @@
                     icon="pi pi-heart-fill" styleClass="p-button-outlined p-button-rounded"
                     (click)="viewFavoriteMoviesList()" [style]="{'margin-left': '.5em'}">
                 </p-button>
-                <p-button label="{{ 'MOVIE_DETAIL.MARK_WATCHED' | translate }}"
-                    *ngIf="showWatchButton && !(markMovieAsWatched)" icon="pi pi-eye"
+                <p-button label="{{ 'MOVIE_DETAIL.MARK_WATCHED' | translate }}" *ngIf="!(markMovieAsWatched)"
+                    [disabled]="!showWatchButton" icon="pi pi-eye"
                     styleClass="p-button-outlined p-button-rounded p-button-success"
                     (click)="addMovieToWatchList(movieData.id)" [style]="{'margin-left': '.5em'}">
                 </p-button>

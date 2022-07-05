@@ -53,6 +53,7 @@ export class AddMovieComponent implements OnInit {
 
   onFormSubmit() {
     const newMovie: Movie = this.addMovieForm.value;
+    newMovie.imageURL = "/assets/images/movies/default.jpg";
     this.movieService.addMovieDetails(newMovie).subscribe(
       data => {
         if (data === 'Movie Already Exists.') {

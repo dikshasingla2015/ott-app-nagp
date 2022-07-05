@@ -1,5 +1,5 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 import { PrimePackageService } from './prime-package.service';
 
@@ -21,11 +21,12 @@ describe('PrimePackageService', () => {
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
+  afterEach(inject([HttpTestingController], (backend: HttpTestingController) => {
+    backend.expectOne('/assets/templates/' + 'prime-packages.json').flush(null, { status: 200, statusText: 'Ok' });
+    backend.verify();
+  }));
+
   it('should be created', () => {
     expect(service).toBeTruthy();
-  });
-
-  afterEach(() => {
-    httpTestingController.verify();
   });
 });

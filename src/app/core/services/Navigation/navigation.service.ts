@@ -1,20 +1,29 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { StateData } from '../../interfaces/statedata.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavigationService {
 
-  private previousURL: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private data: StateData = this.resetData();
 
   constructor() { }
 
-  setPreviousURL(previous: string): void {
-    this.previousURL.next(previous);
+  setData(data: StateData): void {
+    this.data = data;
   }
 
-  getPreviousURL(): Observable<string> {
-    return this.previousURL.asObservable();
+  getData(): StateData {
+    return this.data;
+  }
+
+  resetData(): StateData {
+    return {
+      url: '',
+      movieId: '',
+      isMarkedAsFavorite: false
+    };
   }
 }

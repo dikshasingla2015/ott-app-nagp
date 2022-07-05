@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/Auth/auth.service';
-import { NavigationService } from 'src/app/core/services/Navigation/navigation.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 import { LoginDetails } from '../../../core/interfaces/logindetails.model';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NavigationService } from 'src/app/core/services/Navigation/navigation.service';
+import { FavoritesService } from 'src/app/core/services/Favorites/favorites.service';
+import { StateData } from 'src/app/core/interfaces/statedata.model';
+import { Favorites } from 'src/app/core/interfaces/favorites.model';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent implements OnInit, OnDestroy {
 
   loginForm!: FormGroup;
 
@@ -24,9 +27,14 @@ export class LoginPageComponent implements OnInit {
   constructor(private readonly authService: AuthService,
     private readonly router: Router,
     private readonly userService: UserService,
-    private readonly navigationService: NavigationService,
     private readonly translateService: TranslateService,
-    private snackBar: MatSnackBar) { }
+    private readonly snackBar: MatSnackBar,
+    private readonly navigationService: NavigationService,
+    private readonly favoriteService: FavoritesService) { }
+
+  ngOnDestroy(): void {
+    console.info('destroyed')
+  }
 
   ngOnInit(): void {
     this.userNameControl = new FormControl('', [Validators.required, Validators.email]);
@@ -44,15 +52,43 @@ export class LoginPageComponent implements OnInit {
       response => {
         if (response !== undefined) {
           this.authService.login(response).subscribe(data => {
-            this.router.navigateByUrl('/movies');
+            const navResp = this.navigationService.getData();
+            if (navResp.url !== '' && navResp.movieId !== '') {
+              if (navResp.isMarkedAsFavorite) {
+                this.favoriteService.addMovieAsFavorite(this.getFavoriteOrWatchedData(navResp)).subscribe(resp => {
+                  this.router.navigateByUrl(navResp.url);
+                  this.navigationService.resetData();
+                });
+              } else {
+                this.favoriteService.addMovieAsWatched(this.getFavoriteOrWatchedData(navResp)).subscribe(resp => {
+                  this.router.navigateByUrl(navResp.url);
+                  this.navigationService.resetData();
+                });
+              }
+            } else {
+              this.router.navigateByUrl('/movies');
+            }
           });
         } else {
           this.openSnackBar(this.translateService.instant('LOGIN.INVALID_CREDS'),
             '', "danger-style");
           this.loginForm.reset();
         }
-      }
-    );
+      });
+  }
+
+  getFavoriteOrWatchedData(navResp: StateData): Favorites {
+    return navResp.isMarkedAsFavorite ? {
+      userId: this.authService.getUserId(),
+      movieId: navResp.movieId,
+      isMarkedAsFavorite: true,
+      isMarkedAsWatched: false
+    } : {
+      userId: this.authService.getUserId(),
+      movieId: navResp.movieId,
+      isMarkedAsFavorite: false,
+      isMarkedAsWatched: true
+    };
   }
 
   openSnackBar(message: string, action: string, style: string): void {

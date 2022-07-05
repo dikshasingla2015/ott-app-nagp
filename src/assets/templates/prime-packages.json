@@ -1,21 +1,21 @@
 [
     {
-        "id":"1",
-        "name":"Premium",
+        "id": "1",
+        "name": "Premium",
         "price": 399,
         "durationInMonths": 3,
         "description": "Exclusive Originals & International Movies"
     },
     {
-        "id":"2",
-        "name":"Mobile Only",
+        "id": "2",
+        "name": "Mobile Only",
         "price": 199,
         "durationInMonths": 1,
         "description": "Exclusive Originals & International Movies"
     },
     {
-        "id":"3",
-        "name":"Super",
+        "id": "3",
+        "name": "Super",
         "price": 299,
         "durationInMonths": 2,
         "description": "Exclusive Originals with exclusive web shows"
