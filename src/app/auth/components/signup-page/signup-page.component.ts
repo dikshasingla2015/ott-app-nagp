@@ -44,10 +44,10 @@ export class SignupPageComponent implements OnInit {
     Validators.pattern('[0-9]+')]);
 
     this.passwordControl = new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10),
-    Validators.pattern('[a-zA-Z0-9$#%&!?]+')]);
+    Validators.pattern('[a-zA-Z0-9@$#%&!?]+')]);
 
     this.confirmPasswordControl = new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10),
-    Validators.pattern('[a-zA-Z0-9$#%&!?]+'),]);
+    Validators.pattern('[a-zA-Z0-9@$#%&!?]+'),]);
 
     this.signUpForm = this.formBuilder.group({
       firstName: this.firstNameControl,
