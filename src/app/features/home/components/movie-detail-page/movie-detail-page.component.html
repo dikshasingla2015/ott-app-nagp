@@ -39,8 +39,8 @@
                     (click)="viewAllWatchedMoviesList()" [style]="{'margin-left': '.5em'}">
                 </p-button>
                 <p-button label="{{ 'SIGNUP.CANCEL' | translate }}"
-                    styleClass="p-button-outlined p-button-rounded p-button-danger"
-                    (click)="onCancelClick()" [style]="{'margin-left': '.5em'}">
+                    styleClass="p-button-outlined p-button-rounded p-button-danger" (click)="onCancelClick()"
+                    [style]="{'margin-left': '.5em'}">
                 </p-button>
                 <app-write-review *ngIf="markMovieAsWatched" [movieId]="movieData.id"></app-write-review>
             </div>

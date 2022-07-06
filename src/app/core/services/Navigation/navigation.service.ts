@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
 import { StateData } from '../../interfaces/statedata.model';
 
 @Injectable({

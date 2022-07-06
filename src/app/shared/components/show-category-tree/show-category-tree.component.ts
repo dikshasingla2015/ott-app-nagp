@@ -25,7 +25,7 @@ export class ShowCategoryTreeComponent implements OnInit {
   }
 
   onCategorySelected(language: string, genre: string): void {
-    this.genreText.emit({language: language, genre: genre});
+    this.genreText.emit({ language: language, genre: genre });
   }
 
 }

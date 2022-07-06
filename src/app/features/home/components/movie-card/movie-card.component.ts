@@ -11,7 +11,7 @@ export class MovieCardComponent implements OnInit {
 
   @Input()
   movieData!: Movie;
-  
+
   constructor(private readonly router: Router) { }
 
   ngOnInit(): void {

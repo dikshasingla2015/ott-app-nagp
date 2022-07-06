@@ -9,7 +9,7 @@ export class ReviewsComponent implements OnInit {
 
   @Input()
   reviews!: string[];
-  
+
   constructor() { }
 
   ngOnInit(): void {

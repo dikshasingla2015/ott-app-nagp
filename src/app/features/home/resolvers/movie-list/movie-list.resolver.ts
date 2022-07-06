@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 import { MovieService } from 'src/app/core/services/Movie/movie.service';
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/Auth/auth.service';
@@ -16,7 +16,7 @@ import { Favorites } from 'src/app/core/interfaces/favorites.model';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
-export class LoginPageComponent implements OnInit, OnDestroy {
+export class LoginPageComponent implements OnInit {
 
   loginForm!: FormGroup;
 
@@ -31,10 +31,6 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     private readonly snackBar: MatSnackBar,
     private readonly navigationService: NavigationService,
     private readonly favoriteService: FavoritesService) { }
-
-  ngOnDestroy(): void {
-    console.info('destroyed')
-  }
 
   ngOnInit(): void {
     this.userNameControl = new FormControl('', [Validators.required, Validators.email]);
