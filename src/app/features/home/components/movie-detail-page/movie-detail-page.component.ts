@@ -59,7 +59,7 @@ export class MovieDetailPageComponent implements OnInit {
         this.markMovieAsFavorite = response.isMarkedAsFavorite;
         this.markMovieAsWatched = response.isMarkedAsWatched;
       }
-      this.isPrimeUser = this.authService.getUserPrime() !== undefined ? true : false;
+      this.isPrimeUser = this.authService.getUserPrime() !== null ? true : false;
     }
     if (this.movieData.isAvailableOnPrime && this.isPrimeUser) {
       this.showWatchButton = true;

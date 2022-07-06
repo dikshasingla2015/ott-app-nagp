@@ -27,7 +27,7 @@
         "PASSWORD_REQUIRED": "Bitte Passwort eingeben",
         "PASSWORD_MIN_LENGTH": "Bitte geben Sie mindestens 6 alphanumerische Zeichen ein",
         "PASSWORD_MAX_LENGTH": "Es sind bis zu 10 alphanumerische Zeichen erlaubt",
-        "INCORRECT_FORMAT": "Nur Buchstaben und Ziffern erlaubt",
+        "INCORRECT_FORMAT": "Nur Buchstaben, Ziffern, Sonderzeichen erlaubt",
         "SIGNIN": "Einloggen",
         "SIGN_UP": "Anmeldung",
         "INVALID_CREDS": "Ungültige Login-Details"
@@ -51,7 +51,7 @@
         "PASSWORD_REQUIRED": "Bitte Passwort eingeben",
         "PASSWORD_MIN_LENGTH": "Bitte geben Sie mindestens 6 alphanumerische Zeichen ein",
         "PASSWORD_MAX_LENGTH": "Es sind bis zu 10 alphanumerische Zeichen zulässig",
-        "PASSWORD_FORMAT": "Nur Buchstaben und Ziffern erlaubt",
+        "PASSWORD_FORMAT": "Nur Buchstaben, Ziffern, Sonderzeichen erlaubt",
         "CONFIRM_PASSWORD": "Passwort bestätigen",
         "CONFIRM_PASSWORD_REQUIRED": "Bitte bestätigen Sie Ihr Passwort",
         "PASSWORD_MIS_MATCH": "Passwort und Bestätigungspasswort sollten gleich sein",
